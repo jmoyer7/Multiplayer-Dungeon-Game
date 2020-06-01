@@ -121,6 +121,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1001 &95700252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1458,72 +1459,83 @@ Transform:
   m_PrefabInstance: {fileID: 1009363130}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1036217973
+=======
+--- !u!1001 &757386732
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 383048863}
     m_Modifications:
-    - target: {fileID: 1171216002300228593, guid: 51d5460127d944438a337b64c73b9f67,
-        type: 3}
-      propertyPath: m_Name
-      value: wall_Quadruple
-      objectReference: {fileID: 0}
-    - target: {fileID: 2745972459773444578, guid: 51d5460127d944438a337b64c73b9f67,
+    - target: {fileID: 2949072987967898575, guid: ca1c46a5a94b44600857d5f721523c87,
         type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
       value: 2.5841599
+=======
+      value: -37.141
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
       objectReference: {fileID: 0}
-    - target: {fileID: 2745972459773444578, guid: 51d5460127d944438a337b64c73b9f67,
+    - target: {fileID: 2949072987967898575, guid: ca1c46a5a94b44600857d5f721523c87,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -3.1130981
       objectReference: {fileID: 0}
-    - target: {fileID: 2745972459773444578, guid: 51d5460127d944438a337b64c73b9f67,
+    - target: {fileID: 2949072987967898575, guid: ca1c46a5a94b44600857d5f721523c87,
         type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< HEAD
       value: 15.044185
+=======
+      value: 8.7805
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
       objectReference: {fileID: 0}
-    - target: {fileID: 2745972459773444578, guid: 51d5460127d944438a337b64c73b9f67,
+    - target: {fileID: 2949072987967898575, guid: ca1c46a5a94b44600857d5f721523c87,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 2745972459773444578, guid: 51d5460127d944438a337b64c73b9f67,
+    - target: {fileID: 2949072987967898575, guid: ca1c46a5a94b44600857d5f721523c87,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2745972459773444578, guid: 51d5460127d944438a337b64c73b9f67,
+    - target: {fileID: 2949072987967898575, guid: ca1c46a5a94b44600857d5f721523c87,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 2745972459773444578, guid: 51d5460127d944438a337b64c73b9f67,
+    - target: {fileID: 2949072987967898575, guid: ca1c46a5a94b44600857d5f721523c87,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2745972459773444578, guid: 51d5460127d944438a337b64c73b9f67,
+    - target: {fileID: 2949072987967898575, guid: ca1c46a5a94b44600857d5f721523c87,
         type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 22
+=======
+      value: 6
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
       objectReference: {fileID: 0}
-    - target: {fileID: 2745972459773444578, guid: 51d5460127d944438a337b64c73b9f67,
+    - target: {fileID: 2949072987967898575, guid: ca1c46a5a94b44600857d5f721523c87,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2745972459773444578, guid: 51d5460127d944438a337b64c73b9f67,
+    - target: {fileID: 2949072987967898575, guid: ca1c46a5a94b44600857d5f721523c87,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2745972459773444578, guid: 51d5460127d944438a337b64c73b9f67,
+    - target: {fileID: 2949072987967898575, guid: ca1c46a5a94b44600857d5f721523c87,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 2745972459773444578, guid: 51d5460127d944438a337b64c73b9f67,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1617,6 +1629,60 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1096947485}
   m_PrefabAsset: {fileID: 0}
+=======
+    - target: {fileID: 8066016058207777484, guid: ca1c46a5a94b44600857d5f721523c87,
+        type: 3}
+      propertyPath: m_Name
+      value: Room_Basic (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ca1c46a5a94b44600857d5f721523c87, type: 3}
+--- !u!1 &790907348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 790907350}
+  - component: {fileID: 790907349}
+  m_Layer: 0
+  m_Name: QuickInstantiate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &790907349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790907348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8043731250c7f43b798e781d6efe5cec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 6318172833782097962, guid: 8a124bd56e6d646c5a0b5e80ec400ccf, type: 3}
+  _prefab2: {fileID: 342852121913609381, guid: 0aaf92899c858469ca67aa2041e31e1e, type: 3}
+--- !u!4 &790907350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790907348}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -45.73, y: 146.38, z: 11.05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
 --- !u!1 &1180009892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,6 +1765,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1180009896
@@ -1958,6 +2025,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1290884837}
   m_PrefabAsset: {fileID: 0}
+=======
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1180009896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180009892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23760840a2da21d4188607366335ff1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
 --- !u!1001 &1384686932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2003,7 +2086,11 @@ PrefabInstance:
     - target: {fileID: 4193741020147046835, guid: 58af24ce0cb2c4330bc1ddcc8365c3f0,
         type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 23
+=======
+      value: 1
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
       objectReference: {fileID: 0}
     - target: {fileID: 4193741020147046835, guid: 58af24ce0cb2c4330bc1ddcc8365c3f0,
         type: 3}
@@ -2057,6 +2144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498938558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -29.7, y: 146.88, z: 11.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2253,6 +2341,14 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1847900295}
   m_PrefabAsset: {fileID: 0}
+=======
+  m_LocalPosition: {x: -4.14, y: 96.1, z: -44.749}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
 --- !u!1 &1906704951
 GameObject:
   m_ObjectHideFlags: 0
@@ -2390,7 +2486,11 @@ PrefabInstance:
     - target: {fileID: 2949072987967898575, guid: ca1c46a5a94b44600857d5f721523c87,
         type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 25
+=======
+      value: 3
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
       objectReference: {fileID: 0}
     - target: {fileID: 2949072987967898575, guid: ca1c46a5a94b44600857d5f721523c87,
         type: 3}
@@ -2414,6 +2514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca1c46a5a94b44600857d5f721523c87, type: 3}
+<<<<<<< HEAD
 --- !u!4 &1953853538 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2949072987967898575, guid: ca1c46a5a94b44600857d5f721523c87,
@@ -2495,6 +2596,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2009688129}
   m_PrefabAsset: {fileID: 0}
+=======
+--- !u!4 &1345466688528147719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6174723489405309956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -48.141, y: 146.37, z: 19.781}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
 --- !u!1001 &3771210740269277863
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2540,7 +2657,11 @@ PrefabInstance:
     - target: {fileID: 4193741020147046835, guid: 58af24ce0cb2c4330bc1ddcc8365c3f0,
         type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 24
+=======
+      value: 2
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
       objectReference: {fileID: 0}
     - target: {fileID: 4193741020147046835, guid: 58af24ce0cb2c4330bc1ddcc8365c3f0,
         type: 3}
@@ -2615,7 +2736,7 @@ PrefabInstance:
     - target: {fileID: 2949072987967898575, guid: ca1c46a5a94b44600857d5f721523c87,
         type: 3}
       propertyPath: m_RootOrder
-      value: 28
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2949072987967898575, guid: ca1c46a5a94b44600857d5f721523c87,
         type: 3}
@@ -2639,12 +2760,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca1c46a5a94b44600857d5f721523c87, type: 3}
+<<<<<<< HEAD
 --- !u!4 &4197698530599549945 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2949072987967898575, guid: ca1c46a5a94b44600857d5f721523c87,
     type: 3}
   m_PrefabInstance: {fileID: 4197698530599549944}
   m_PrefabAsset: {fileID: 0}
+=======
+--- !u!1 &6174723489405309956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1345466688528147719}
+  m_Layer: 0
+  m_Name: Floor (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
 --- !u!1001 &7993309112876467092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2695,7 +2835,11 @@ PrefabInstance:
     - target: {fileID: 8953717474462788677, guid: d52fb045f4c2d4d0ebab2c3bcc16ca97,
         type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 26
+=======
+      value: 5
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
       objectReference: {fileID: 0}
     - target: {fileID: 8953717474462788677, guid: d52fb045f4c2d4d0ebab2c3bcc16ca97,
         type: 3}
