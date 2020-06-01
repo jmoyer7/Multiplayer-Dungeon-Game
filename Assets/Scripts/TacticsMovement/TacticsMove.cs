@@ -7,7 +7,6 @@ using UnityEngine;
 public class TacticsMove : MonoBehaviourPun
 {
     public static bool turn = false;
-    
 
     List<Tile> selectableTiles = new List<Tile>();
     GameObject[] tiles;
@@ -63,7 +62,7 @@ public class TacticsMove : MonoBehaviourPun
 
     public void ComputeAdjacencyLists(float jumpHeight, Tile target)
     {
-        tiles = GameObject.FindGameObjectsWithTag("Tile");
+        //tiles = GameObject.FindGameObjectsWithTag("Tile");
 
         foreach (GameObject tile in tiles)
         {
@@ -397,18 +396,9 @@ public class TacticsMove : MonoBehaviourPun
 
     public void EndTurn()
     {
-            turn = false;
-            TurnManagerPun2.EndOfTurn = true;
-
-        if (!NPCMove.enemyTurn)
-        {
-            base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
-        }
-            NPCMove.enemyTurn = !NPCMove.enemyTurn;
-
-
+        turn = false;
+        TurnManagerPun2.EndOfTurn = true;
+        base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
     }
-
-    
 
 }

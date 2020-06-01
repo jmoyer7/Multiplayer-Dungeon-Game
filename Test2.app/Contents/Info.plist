@@ -5,17 +5,17 @@
     <key>CFBundleDevelopmentRegion</key>
     <string>English</string>
     <key>CFBundleExecutable</key>
-    <string>Co-op Dungeon</string>
+    <string>DaedalusTestNew</string>
     <key>CFBundleGetInfoString</key>
     <string>Unity Player version 2019.3.7f1 (6437fd74d35d). (c) 2020 Unity Technologies ApS. All rights reserved.</string>
     <key>CFBundleIconFile</key>
     <string>PlayerIcon.icns</string>
     <key>CFBundleIdentifier</key>
-    <string>com.DefaultCompany.Co-opDungeon</string>
+    <string>com.DefaultCompany.DaedalusTestNew</string>
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleName</key>
-    <string>Co-op Dungeon</string>
+    <string>DaedalusTestNew</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
