@@ -123,6 +123,7 @@ NavMeshSettings:
   m_NavMeshData: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &95700252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1466,6 +1467,9 @@ Transform:
 =======
 --- !u!1001 &757386732
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
+=======
+--- !u!1001 &757386732
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1477,7 +1481,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 2.5841599
+=======
+      value: -37.141
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
 =======
       value: -37.141
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
@@ -1495,7 +1503,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 15.044185
+=======
+      value: 8.7805
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
 =======
       value: 8.7805
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
@@ -1528,7 +1540,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 22
+=======
+      value: 6
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
 =======
       value: 6
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
@@ -1551,6 +1567,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     - target: {fileID: 2745972459773444578, guid: 51d5460127d944438a337b64c73b9f67,
@@ -1661,6 +1678,14 @@ Transform:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
+=======
+    - target: {fileID: 8066016058207777484, guid: ca1c46a5a94b44600857d5f721523c87,
+        type: 3}
+      propertyPath: m_Name
+      value: Room_Basic (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
   m_SourcePrefab: {fileID: 100100000, guid: ca1c46a5a94b44600857d5f721523c87, type: 3}
 --- !u!1 &790907348
 GameObject:
@@ -1708,6 +1733,9 @@ Transform:
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
+=======
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
 =======
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
@@ -1793,6 +1821,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_RootOrder: 3
@@ -2067,6 +2096,13 @@ MonoBehaviour:
 MonoBehaviour:
   m_ObjectHideFlags: 0
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
+=======
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1180009896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2077,6 +2113,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
+=======
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
 =======
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
@@ -2127,7 +2166,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 23
+=======
+      value: 1
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
 =======
       value: 1
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
@@ -2187,6 +2230,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498938558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_LocalPosition: {x: -29.7, y: 146.88, z: 11.94}
@@ -2401,6 +2445,14 @@ Transform:
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
+=======
+  m_LocalPosition: {x: -4.14, y: 96.1, z: -44.749}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
 --- !u!1 &1906704951
 GameObject:
   m_ObjectHideFlags: 0
@@ -2540,7 +2592,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 25
+=======
+      value: 3
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
 =======
       value: 3
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
@@ -2570,6 +2626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca1c46a5a94b44600857d5f721523c87, type: 3}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!4 &1953853538 stripped
@@ -2662,6 +2719,11 @@ Transform:
 Transform:
   m_ObjectHideFlags: 0
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
+=======
+--- !u!4 &1345466688528147719
+Transform:
+  m_ObjectHideFlags: 0
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2674,6 +2736,9 @@ Transform:
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
+=======
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
 =======
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
@@ -2724,7 +2789,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 24
+=======
+      value: 2
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
 =======
       value: 2
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
@@ -2831,6 +2900,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: ca1c46a5a94b44600857d5f721523c87, type: 3}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!4 &4197698530599549945 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2949072987967898575, guid: ca1c46a5a94b44600857d5f721523c87,
@@ -2838,6 +2908,8 @@ Transform:
   m_PrefabInstance: {fileID: 4197698530599549944}
   m_PrefabAsset: {fileID: 0}
 =======
+=======
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
 =======
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
 --- !u!1 &6174723489405309956
@@ -2857,6 +2929,9 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
+=======
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
 =======
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
@@ -2912,7 +2987,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 26
+=======
+      value: 5
+>>>>>>> parent of 5e6feb2... Constructed test dungeon
 =======
       value: 5
 >>>>>>> parent of 5e6feb2... Constructed test dungeon
