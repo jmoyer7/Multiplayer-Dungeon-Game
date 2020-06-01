@@ -6,7 +6,9 @@ using UnityEngine;
 
 public class TurnManagerPun2 : TacticsMove
 {
+
     public static bool EndOfTurn = false;
+
 
     int turnCount = 0;
 
@@ -22,12 +24,12 @@ public class TurnManagerPun2 : TacticsMove
 
 
     [PunRPC]
-    public void SendTurn(bool EndOfTurn)
-    {
+    public void SendTurn(bool EndOfTurn) {
+      
         if (EndOfTurn)
         {
             BeginTurn();
-        }
+        }    
     }
 
 
