@@ -15,9 +15,10 @@ public class PlayerMove : TacticsMove
 	// Update is called once per frame
 	void Update () 
 	{
+        
 
         Debug.DrawRay(transform.position, transform.forward);
-        if (!turn || !base.photonView.IsMine)
+        if (!turn || !base.photonView.IsMine || NPCMove.enemyTurn)
         {
             return;
         }
@@ -30,6 +31,7 @@ public class PlayerMove : TacticsMove
         else
         {
             Move();
+            
         }
 	}
     
