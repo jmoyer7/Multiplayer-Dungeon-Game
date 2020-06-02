@@ -408,9 +408,14 @@ public class TacticsMove : MonoBehaviourPun
         {
             turn = false;
             TurnManagerPun2.EndOfTurn = true;
-            base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
-
             NPCMove.EnemyTurn();
+
+            //Partially works but doesn't allow player to move again, but stops their movement initially
+            if (!enemyTurn)
+            {
+                base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
+            }
+            
 
         }
 
