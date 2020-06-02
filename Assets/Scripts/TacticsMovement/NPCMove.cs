@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class NPCMove : TacticsMove 
@@ -17,7 +18,8 @@ public class NPCMove : TacticsMove
 	{
         Debug.DrawRay(transform.position, transform.forward);
 
-        if (!turn)
+
+        if (!enemyTurn)
         {
             return;
         }
@@ -60,5 +62,11 @@ public class NPCMove : TacticsMove
         }
 
         target = nearest;
+    }
+
+
+    public static void EnemyTurn()
+    {
+        enemyTurn = true;
     }
 }

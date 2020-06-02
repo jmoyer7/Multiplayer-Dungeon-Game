@@ -7,6 +7,7 @@ using UnityEngine;
 public class TacticsMove : MonoBehaviourPun
 {
     public static bool turn = false;
+    public static bool enemyTurn = false;
 
     List<Tile> selectableTiles = new List<Tile>();
     GameObject[] tiles;
@@ -394,11 +395,30 @@ public class TacticsMove : MonoBehaviourPun
         TurnManagerPun2.EndOfTurn = false;
     }
 
+
+
     public void EndTurn()
     {
-        turn = false;
-        TurnManagerPun2.EndOfTurn = true;
-        base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
+
+        if (enemyTurn)
+        {
+            enemyTurn = false;
+        }
+        else
+        {
+            turn = false;
+            TurnManagerPun2.EndOfTurn = true;
+            base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
+
+            NPCMove.EnemyTurn();
+
+        }
+
+        
+
     }
+
+
+
 
 }
