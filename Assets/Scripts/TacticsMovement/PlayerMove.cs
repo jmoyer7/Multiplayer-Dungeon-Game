@@ -6,18 +6,29 @@ using Photon.Pun;
 public class PlayerMove : TacticsMove 
 {
 
-	// Use this for initialization
-	void Start () 
+    public GameObject enemy; 
+
+    // Use this for initialization
+    void Start () 
 	{
         Init();
-	}
+        //enemy = GameObject.FindGameObjectsWithTag("NPC");
+        enemy = GameObject.Find("enemy");
+       
+    }
 	
 	// Update is called once per frame
 	void Update () 
 	{
+        print(NPCMove.IsMoving);
+
+        if (NPCMove.IsMoving)
+        {
+            return;
+        }
 
         Debug.DrawRay(transform.position, transform.forward);
-        if (!turn || !base.photonView.IsMine)
+        if (!turn || !base.photonView.IsMine || enemyTurn)
         {
             return;
         }

@@ -118,6 +118,7 @@ MonoBehaviour:
   moveSpeed: 2
   jumpVelocity: 4.5
   actualTargetTile: {fileID: 0}
+  enemy: {fileID: 0}
 --- !u!114 &6318172833782097965
 MonoBehaviour:
   m_ObjectHideFlags: 0
