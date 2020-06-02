@@ -6,6 +6,9 @@ using UnityEngine;
 public class NPCMove : TacticsMove 
 {
     GameObject target;
+    public static bool IsMoving = false;
+
+    //Send RPC for IsMoving,working properly for master only right now
 
 	// Use this for initialization
 	void Start () 
@@ -17,15 +20,17 @@ public class NPCMove : TacticsMove
 	void Update () 
 	{
         Debug.DrawRay(transform.position, transform.forward);
-
+        
 
         if (!enemyTurn)
         {
+            IsMoving = false;
             return;
         }
 
         if (!moving)
         {
+            IsMoving = false;
             FindNearestTarget();
             CalculatePath();
             FindSelectableTiles();
@@ -33,7 +38,9 @@ public class NPCMove : TacticsMove
         }
         else
         {
+            IsMoving = true;
             Move();
+            
         }
 	}
 
