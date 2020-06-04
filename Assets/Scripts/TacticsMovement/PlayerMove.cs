@@ -20,7 +20,7 @@ public class PlayerMove : TacticsMove
 	// Update is called once per frame
 	void Update () 
 	{
-        print(NPCMove.IsMoving);
+        
 
         if (NPCMove.IsMoving)
         {

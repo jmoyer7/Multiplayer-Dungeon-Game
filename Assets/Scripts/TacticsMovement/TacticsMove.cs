@@ -403,6 +403,14 @@ public class TacticsMove : MonoBehaviourPun
         if (enemyTurn)
         {
             enemyTurn = false;
+
+            print("HERE");
+
+            //Make it so player can move again
+            //Makes it so only master client can go next, should go player 1 then 2 again
+            TurnManagerPun2.EndOfTurn = true;
+            base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
+
         }
         else
         {
@@ -410,7 +418,7 @@ public class TacticsMove : MonoBehaviourPun
             TurnManagerPun2.EndOfTurn = true;
             NPCMove.EnemyTurn();
 
-            //Partially works but doesn't allow player to move again, but stops their movement initially
+            
             if (!enemyTurn)
             {
                 base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);

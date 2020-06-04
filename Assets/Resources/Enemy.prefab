@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3967618256456384505}
   - component: {fileID: -6863689976977865265}
   - component: {fileID: -336949943456149932}
+  - component: {fileID: -4121898173371068142}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -152,3 +153,21 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+--- !u!114 &-4121898173371068142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4609613833212215458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdbd90db67e5408ab6b2a55869fd0b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moving: 0
+  move: 5
+  jumpHeight: 2
+  moveSpeed: 2
+  jumpVelocity: 4.5
+  actualTargetTile: {fileID: 0}

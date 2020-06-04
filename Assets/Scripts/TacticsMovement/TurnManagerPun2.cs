@@ -25,7 +25,7 @@ public class TurnManagerPun2 : TacticsMove
     [PunRPC]
     public void SendTurn(bool EndOfTurn)
     {
-
+        
         
         if (EndOfTurn)
         {
