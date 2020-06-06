@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -6863689976977865265}
   - component: {fileID: -336949943456149932}
   - component: {fileID: -4121898173371068142}
+  - component: {fileID: 2865236959153139767}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -110,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87ee3a0a19415247a63dfeed380c7bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTile: {fileID: 0}
   moving: 0
   move: 5
   jumpHeight: 2
@@ -165,6 +167,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efdbd90db67e5408ab6b2a55869fd0b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTile: {fileID: 0}
+  moving: 0
+  move: 5
+  jumpHeight: 2
+  moveSpeed: 2
+  jumpVelocity: 4.5
+  actualTargetTile: {fileID: 0}
+--- !u!114 &2865236959153139767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4609613833212215458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d86c78cb3df64d81b3bf4eee68d1575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTile: {fileID: 0}
   moving: 0
   move: 5
   jumpHeight: 2

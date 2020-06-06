@@ -13,7 +13,7 @@ public class TacticsMove : MonoBehaviourPun
     GameObject[] tiles;
 
     Stack<Tile> path = new Stack<Tile>();
-    Tile currentTile;
+    public Tile currentTile;
 
     public bool moving = false;
     public int move = 5;
@@ -95,6 +95,9 @@ public class TacticsMove : MonoBehaviourPun
             {
                 foreach (Tile tile in t.adjacencyList)
                 {
+                    //Here
+                    print("Adjacency!");
+
                     if (!tile.visited)
                     {
                         tile.parent = t;
@@ -354,8 +357,12 @@ public class TacticsMove : MonoBehaviourPun
                 return;
             }
 
+
+
             foreach (Tile tile in t.adjacencyList)
             {
+                print("yes");
+
                 if (closedList.Contains(tile))
                 {
                     //Do nothing, already processed
@@ -404,10 +411,9 @@ public class TacticsMove : MonoBehaviourPun
         {
             enemyTurn = false;
 
-            print("HERE");
+           
 
-            //Make it so player can move again
-            //Makes it so only master client can go next, should go player 1 then 2 again
+            
             TurnManagerPun2.EndOfTurn = true;
             base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
 

@@ -18,9 +18,10 @@ GameObject:
   - component: {fileID: 7395202447107388922}
   - component: {fileID: 1695439818836979533}
   - component: {fileID: 8283093119831034520}
+  - component: {fileID: 3726805327104758602}
   m_Layer: 0
   m_Name: Player2
-  m_TagString: MainCamera
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad065545539f1468f84cbd030120dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTile: {fileID: 0}
   moving: 0
   move: 5
   jumpHeight: 2
@@ -168,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d73c2be166b594d95ba00839ccdcd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTile: {fileID: 0}
   moving: 0
   move: 5
   jumpHeight: 2
@@ -186,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efdbd90db67e5408ab6b2a55869fd0b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTile: {fileID: 0}
   moving: 0
   move: 5
   jumpHeight: 2
@@ -209,3 +213,15 @@ MonoBehaviour:
   centerOffset: {x: 0, y: 0, z: 0}
   followOnStart: 1
   smoothSpeed: 0.125
+--- !u!114 &3726805327104758602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342852121913609381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb755eb1bd554bf6a8866f35ef1da19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
