@@ -194,3 +194,4 @@ MonoBehaviour:
   jumpVelocity: 4.5
   actualTargetTile: {fileID: 0}
   AttackedThisTurn: 0
+  thisTile: {fileID: 0}

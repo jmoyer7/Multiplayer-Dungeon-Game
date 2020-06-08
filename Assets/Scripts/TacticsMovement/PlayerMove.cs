@@ -21,7 +21,7 @@ public class PlayerMove : TacticsMove
 	void Update () 
 	{
         
-
+        //COuld be problematic
         if (NPCMove.IsMoving)
         {
             return;

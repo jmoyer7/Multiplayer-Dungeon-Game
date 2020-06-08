@@ -9,10 +9,10 @@ public class NPCAttack : TacticsMove
 
     //private Tile thisTileScript;
 
-    // public Tile thisTile;
+    public Tile thisTile;
     //List<GameObject> currentCollisions = new List<GameObject>();
 
-
+    TacticsMove t;
     
 
 
@@ -21,7 +21,7 @@ public class NPCAttack : TacticsMove
     // Start is called before the first frame update
     void Start()
     {
-
+        t = GetComponent<TacticsMove>();
     }
 
     public void checkForPlayer(Vector3 center, float radius)
@@ -48,16 +48,23 @@ public class NPCAttack : TacticsMove
     void Update()
     {
 
-       if (!TurnManagerPun2.EndOfTurn)
-       {
-            AttackedThisTurn = false;
-       }
 
-        if (enemyTurn && !AttackedThisTurn)
+
+        thisTile = GetTargetTile(gameObject);
+
+        if (!TurnManagerPun2.EndOfTurn)
         {
+            AttackedThisTurn = false;
+        }
+        
+        //Checks if the NPC is on the tile that they were trying to get to
+        //*Clean up these Variables*
+        if (enemyTurn && !AttackedThisTurn && thisTile == t.actualTargetTile)
+        {
+            //if so, check if there is a player around
             checkForPlayer(transform.position, 4);
         }
-      
+
 
         //      thisTile = GetTargetTile(gameObject);
 
