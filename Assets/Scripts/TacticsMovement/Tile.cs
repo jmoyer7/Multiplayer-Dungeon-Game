@@ -23,8 +23,15 @@ public class Tile : MonoBehaviour
     public float g = 0;
     public float h = 0;
 
-	// Use this for initialization
-	void Start () 
+    
+
+    private void Awake()
+    {
+        
+    }
+
+    // Use this for initialization
+    void Start () 
 	{
 
 	}
@@ -91,7 +98,11 @@ public class Tile : MonoBehaviour
                 if (!Physics.Raycast(tile.transform.position, Vector3.up, out hit, 1) || (tile == target))
                 {
                     adjacencyList.Add(tile);
+
                 }
+
+                
+
             }
         }
     }

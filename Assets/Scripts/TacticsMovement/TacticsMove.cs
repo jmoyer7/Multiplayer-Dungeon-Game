@@ -95,8 +95,7 @@ public class TacticsMove : MonoBehaviourPun
             {
                 foreach (Tile tile in t.adjacencyList)
                 {
-                    //Here
-                    print("Adjacency!");
+                    
 
                     if (!tile.visited)
                     {
@@ -361,7 +360,7 @@ public class TacticsMove : MonoBehaviourPun
 
             foreach (Tile tile in t.adjacencyList)
             {
-                print("yes");
+                
 
                 if (closedList.Contains(tile))
                 {
