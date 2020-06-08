@@ -193,3 +193,4 @@ MonoBehaviour:
   moveSpeed: 2
   jumpVelocity: 4.5
   actualTargetTile: {fileID: 0}
+  AttackedThisTurn: 0

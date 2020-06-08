@@ -48,10 +48,10 @@ public class NPCAttack : TacticsMove
     void Update()
     {
 
-       // if (TurnManagerPun2.EndOfTurn)
-       // {
-       //     AttackedThisTurn = false;
-        //}
+       if (!TurnManagerPun2.EndOfTurn)
+       {
+            AttackedThisTurn = false;
+       }
 
         if (enemyTurn && !AttackedThisTurn)
         {
