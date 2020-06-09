@@ -6,6 +6,8 @@ public class NPCAttack : TacticsMove
 {
     public bool AttackedThisTurn = false;
 
+    public int attackPower;
+
 
     //private Tile thisTileScript;
 
@@ -13,6 +15,8 @@ public class NPCAttack : TacticsMove
     //List<GameObject> currentCollisions = new List<GameObject>();
 
     TacticsMove t;
+
+    public PlayerStatus playerStatus;
     
 
 
@@ -22,6 +26,9 @@ public class NPCAttack : TacticsMove
     void Start()
     {
         t = GetComponent<TacticsMove>();
+        attackPower = 5;
+
+
     }
 
     public void checkForPlayer(Vector3 center, float radius)
@@ -32,15 +39,24 @@ public class NPCAttack : TacticsMove
         {
             if (PlayerObj.gameObject.tag == "Player")
             {
+
+
+                playerStatus = PlayerObj.GetComponent<PlayerStatus>();
+                Attack();
                 print("Attacking Now!");
                 AttackedThisTurn = true;
                 //Attacking = true;
             }
-            else
-            {
-                //Attacking = false;
-            }
+            
         }
+        
+    }
+
+
+    public void Attack()
+    {
+        playerStatus.health -= attackPower;
+        
         
     }
 
