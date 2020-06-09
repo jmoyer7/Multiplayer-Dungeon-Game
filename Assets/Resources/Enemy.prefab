@@ -196,4 +196,5 @@ MonoBehaviour:
   AttackedThisTurn: 0
   attackPower: 0
   thisTile: {fileID: 0}
+  healthBar: {fileID: 0}
   playerStatus: {fileID: 0}

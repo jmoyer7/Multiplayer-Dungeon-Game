@@ -59,7 +59,7 @@ namespace Photon.Pun.Demo.PunBasics
 
 			_canvasGroup = this.GetComponent<CanvasGroup>();
 			
-			this.transform.SetParent(GameObject.Find("Canvas").GetComponent<Transform>(), false);
+		//	this.transform.SetParent(GameObject.Find("PlayerUI").GetComponent<Transform>(), false);
 		}
 
 		/// <summary>

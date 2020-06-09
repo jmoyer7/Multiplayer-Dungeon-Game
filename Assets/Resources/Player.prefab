@@ -212,7 +212,7 @@ MonoBehaviour:
   height: 10
   centerOffset: {x: 0, y: 0, z: 0}
   followOnStart: 1
-  smoothSpeed: 0.125
+  smoothSpeed: 0
 --- !u!114 &-9039587952404653099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,4 +225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb755eb1bd554bf6a8866f35ef1da19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 0}
+  playerUI: {fileID: 2156903557849991004, guid: ad560d6025524498292af504c173e8b8,
+    type: 3}

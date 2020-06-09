@@ -16,6 +16,8 @@ public class NPCAttack : TacticsMove
 
     TacticsMove t;
 
+    public GameObject healthBar;
+
     public PlayerStatus playerStatus;
     
 
@@ -25,9 +27,10 @@ public class NPCAttack : TacticsMove
     // Start is called before the first frame update
     void Start()
     {
+        healthBar = GameObject.Find("Health Bar");
         t = GetComponent<TacticsMove>();
         attackPower = 5;
-
+        
 
     }
 
@@ -55,9 +58,12 @@ public class NPCAttack : TacticsMove
 
     public void Attack()
     {
-        playerStatus.health -= attackPower;
-        
-        
+        playerStatus.currentHealth -= attackPower;
+
+        //Problem here. Need to ONLY change health bar of player instance that is being attacked.
+        //Instead, use playerObj to find health bar since health bar is child of player
+        healthBar.GetComponent<HealthBar>().SetHealth(playerStatus.currentHealth);
+
     }
 
     // Update is called once per frame
@@ -78,7 +84,7 @@ public class NPCAttack : TacticsMove
         if (enemyTurn && !AttackedThisTurn && thisTile == t.actualTargetTile)
         {
             //if so, check if there is a player around
-            checkForPlayer(transform.position, 4);
+            checkForPlayer(transform.position, 1);
         }
 
 
