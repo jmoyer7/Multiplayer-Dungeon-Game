@@ -16,6 +16,8 @@ public class NPCAttack : TacticsMove
 
     TacticsMove t;
 
+    public GameObject playerUI;
+
     public GameObject healthBar;
 
     public PlayerStatus playerStatus;
@@ -27,7 +29,7 @@ public class NPCAttack : TacticsMove
     // Start is called before the first frame update
     void Start()
     {
-        healthBar = GameObject.Find("Health Bar");
+        //healthBar = GameObject.Find("Health Bar");
         t = GetComponent<TacticsMove>();
         attackPower = 5;
         
@@ -43,7 +45,13 @@ public class NPCAttack : TacticsMove
             if (PlayerObj.gameObject.tag == "Player")
             {
 
+                //get child of player
 
+
+
+                playerUI = PlayerObj.transform.GetChild(0).gameObject;
+                healthBar = playerUI.transform.GetChild(0).gameObject;
+             
                 playerStatus = PlayerObj.GetComponent<PlayerStatus>();
                 Attack();
                 print("Attacking Now!");

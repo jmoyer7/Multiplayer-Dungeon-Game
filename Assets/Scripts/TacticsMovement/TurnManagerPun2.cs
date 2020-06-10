@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class TurnManagerPun2 : TacticsMove
 {
+
+
     public static bool EndOfTurn = false;
     public static bool EndOfEnemyTurn = false;
 
