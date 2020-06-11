@@ -1189,7 +1189,7 @@ MonoBehaviour:
   _prefab2: {fileID: 342852121913609381, guid: 0aaf92899c858469ca67aa2041e31e1e, type: 3}
   enemyPrefab: {fileID: 4609613833212215458, guid: 753d88d4abc8b46f1aa8e47e90807c71,
     type: 3}
-  playerUI: {fileID: 2156903557849991004, guid: ad560d6025524498292af504c173e8b8,
+  playerUI: {fileID: 3264678421233409571, guid: be6a47432213d427d9ef1afa89801866,
     type: 3}
   playerUIPrefab: {fileID: 0}
 --- !u!4 &790907350
