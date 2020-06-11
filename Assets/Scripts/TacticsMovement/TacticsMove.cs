@@ -6,6 +6,11 @@ using UnityEngine;
 
 public class TacticsMove : MonoBehaviourPun
 {
+    public GameObject[] player;
+    private TacticsMove tacticsMove;
+
+    public static bool endingTurn = false;
+
     public static bool turn = false;
     public static bool enemyTurn = false;
 
@@ -33,6 +38,30 @@ public class TacticsMove : MonoBehaviourPun
 
     public Tile actualTargetTile;
 
+    private void Update()
+    {
+        if (endingTurn)
+        {
+            if (!enemyTurn)
+            {
+                print("print");
+                TurnManagerPun2.EndOfTurn = true;
+
+                player = GameObject.FindGameObjectsWithTag("Player");
+
+                foreach (GameObject p in player) {
+
+                    tacticsMove = player[0].GetComponent<TacticsMove>();
+                }
+                
+
+                tacticsMove.EndTurn();
+
+                //player.GetComponent(photonView).RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
+                
+            }
+        }
+    }
     protected void Init()
     {
         tiles = GameObject.FindGameObjectsWithTag("Tile");
@@ -401,32 +430,46 @@ public class TacticsMove : MonoBehaviourPun
         TurnManagerPun2.EndOfTurn = false;
     }
 
+    
+
+    public void OnClick_EndTurn()
+    {
+       
+        //Have click access MAIN tactsMove script with the function in it.
+        //Have func in onclick script that calls actual func in tacticsMove.
+
+    }
+
 
 
     public void EndTurn()
     {
 
+        print(endingTurn);
+
         if (enemyTurn)
         {
             enemyTurn = false;
 
-           
-
-            
             TurnManagerPun2.EndOfTurn = true;
             base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
 
         }
         else
         {
-            turn = false;
-            TurnManagerPun2.EndOfTurn = true;
-            NPCMove.EnemyTurn();
 
+            turn = false;
             
-            if (!enemyTurn)
+            if (!enemyTurn && endingTurn)
             {
+
+                print("here");
                 base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
+                //GameObject.Find("EndTurn").GetComponent<EndTurnButton>().enabled = true;
+
+                endingTurn = false;
+
+                NPCMove.EnemyTurn();
             }
             
 

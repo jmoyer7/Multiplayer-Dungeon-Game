@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad065545539f1468f84cbd030120dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: []
   currentTile: {fileID: 0}
   moving: 0
   move: 5
@@ -170,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d73c2be166b594d95ba00839ccdcd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: []
   currentTile: {fileID: 0}
   moving: 0
   move: 5
@@ -189,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efdbd90db67e5408ab6b2a55869fd0b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: []
   currentTile: {fileID: 0}
   moving: 0
   move: 5
