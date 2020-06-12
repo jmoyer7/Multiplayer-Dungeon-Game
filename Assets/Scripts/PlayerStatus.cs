@@ -8,27 +8,34 @@ public class PlayerStatus : MonoBehaviourPun
     public int maxHealth = 100;
     public int currentHealth;
 
-    
+    public static GameObject LocalPlayerInstance;
+
     public GameObject healthBar;
 
     public GameObject playerUI;
 
     private GameObject playerUIPrefab;
 
+    [SerializeField]
+    public GameObject _player;
+
     // Start is called before the first frame update
     void Start()
     {
-        if (PhotonNetwork.IsMasterClient)
+        Vector3 player2Pos = GameObject.Find("Player2_Spawn").transform.position;
+
+
+        //have to instantiate in quickinst since player cant inst itself
+        if (LocalPlayerInstance == null)
         {
-            //playerUIPrefab = Instantiate(playerUI);
-            //playerUIPrefab.transform.SetParent(gameObject.transform);
+            print("gjjgy");
+
+            PhotonNetwork.Instantiate(this._player.name, player2Pos, Quaternion.identity);
+            playerUIPrefab = Instantiate(playerUI);
+            playerUIPrefab.transform.SetParent(this.transform);
+
         }
-        else
-        {
-            //playerUIPrefab = Instantiate(playerUI);
-            //playerUIPrefab.transform.SetParent(gameObject.transform);
-        }
-       
+
         currentHealth = maxHealth;
         healthBar = GameObject.Find("Health Bar");
 
@@ -40,6 +47,15 @@ public class PlayerStatus : MonoBehaviourPun
         
         
 
+    }
+
+    private void Awake()
+    {
+        //needs to go on player object
+        if (photonView.IsMine)
+        {
+            LocalPlayerInstance = this.gameObject;
+        }
     }
 
     // Update is called once per frame

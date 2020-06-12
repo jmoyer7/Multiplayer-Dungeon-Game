@@ -231,5 +231,6 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 0}
-  playerUI: {fileID: 2156903557849991004, guid: ad560d6025524498292af504c173e8b8,
+  playerUI: {fileID: 3264678421233409571, guid: be6a47432213d427d9ef1afa89801866,
     type: 3}
+  _player: {fileID: 0}
