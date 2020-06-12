@@ -7,6 +7,7 @@ public class NPCMove : TacticsMove
 {
     GameObject target;
     public static bool IsMoving = false;
+    public static bool endOfEnemyTurn = false;
 
     //Send RPC for IsMoving,working properly for master only right now
 

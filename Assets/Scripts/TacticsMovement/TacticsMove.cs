@@ -457,19 +457,17 @@ public class TacticsMove : MonoBehaviourPun
         }
         else
         {
-
             turn = false;
-            
             if (!enemyTurn && endingTurn)
             {
+                
+                endingTurn = false;
+                NPCMove.EnemyTurn();
 
-                print("here");
-                base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
+                //base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
                 //GameObject.Find("EndTurn").GetComponent<EndTurnButton>().enabled = true;
 
-                endingTurn = false;
-
-                NPCMove.EnemyTurn();
+                
             }
             
 
