@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ExitGames.Client.Photon;
 using Photon.Pun;
+using Photon.Pun.UtilityScripts;
 using Photon.Realtime;
 using UnityEngine;
 
@@ -447,24 +448,17 @@ public class TacticsMove : MonoBehaviourPunCallbacks
         TurnManagerPun2.EndOfTurn = false;
 
 
-        print(PlayerStatus.LocalPlayerInstance.GetComponent<PlayerStatus>().turnCount);
+        //print(PlayerStatus.LocalPlayerInstance.GetComponent<PlayerStatus>().turnCount);
     }
 
     
 
-    public void OnClick_EndTurn()
-    {
-       
-        
+    
 
-    }
 
     
 
-   
-        
-   
-
+    
     public void EndTurn()
     {
 
@@ -477,22 +471,15 @@ public class TacticsMove : MonoBehaviourPunCallbacks
         {
             enemyTurn = false;
 
-            TurnManagerPun2.EndOfTurn = true;
+
+            TurnManagerPun2.SendTurnEvent();
+
+            //use playernumbering script to get actor number and pass through below options.
 
 
-            //Get photonview of player and pass that into target actors
+          
 
-
-            RaiseEventOptions raiseEventOptions = new RaiseEventOptions
-            {
-                TargetActors = new int[] { GameObject.Find("Player").GetComponent<PhotonView>().ViewID }
-            };
-
-            
-
-            object[] datas = new object[] { TurnManagerPun2.EndOfTurn };
-
-            PhotonNetwork.RaiseEvent(12, datas, RaiseEventOptions.Default,SendOptions.SendReliable);
+          
 
             
             //base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
@@ -503,7 +490,7 @@ public class TacticsMove : MonoBehaviourPunCallbacks
             
 
             turn = false;
-            TurnManagerPun2.turnCount++;
+            
 
             
             PlayerStatus.LocalPlayerInstance.GetComponent<PlayerStatus>().turnCount++;
