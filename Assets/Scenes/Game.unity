@@ -1166,6 +1166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 790907350}
   - component: {fileID: 790907349}
+  - component: {fileID: 790907351}
   m_Layer: 0
   m_Name: QuickInstantiate
   m_TagString: Untagged
@@ -1194,6 +1195,7 @@ MonoBehaviour:
   playerUI: {fileID: 3264678421233409571, guid: be6a47432213d427d9ef1afa89801866,
     type: 3}
   playerUIPrefab: {fileID: 0}
+  _player: {fileID: 6318172833782097962, guid: 8a124bd56e6d646c5a0b5e80ec400ccf, type: 3}
 --- !u!4 &790907350
 Transform:
   m_ObjectHideFlags: 0
@@ -1208,6 +1210,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &790907351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790907348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b28dd60f6abf16d4094cf0f642a043e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 0
 --- !u!1001 &899949019
 PrefabInstance:
   m_ObjectHideFlags: 0

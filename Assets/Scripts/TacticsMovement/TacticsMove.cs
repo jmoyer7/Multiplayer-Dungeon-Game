@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 
-public class TacticsMove : MonoBehaviourPun
+public class TacticsMove : MonoBehaviourPunCallbacks
 {
-    public GameObject[] player;
+    public GameObject[] players;
+    public int[] viewIDs = new int[4];
+
     private TacticsMove tacticsMove;
 
     public static bool endingTurn = false;
@@ -38,6 +41,20 @@ public class TacticsMove : MonoBehaviourPun
 
     public Tile actualTargetTile;
 
+
+    public void Start()
+    {
+        players = GameObject.FindGameObjectsWithTag("Player");
+
+        for(int i = 0; i < players.Length; i++)
+        {
+            viewIDs[i] = players[i].GetComponent<PhotonView>().ViewID;
+        }
+
+        print(players[0]);
+        print(viewIDs);
+    }
+
     private void Update()
     {
         if (endingTurn)
@@ -47,11 +64,11 @@ public class TacticsMove : MonoBehaviourPun
                 print("print");
                 TurnManagerPun2.EndOfTurn = true;
 
-                player = GameObject.FindGameObjectsWithTag("Player");
+                
 
-                foreach (GameObject p in player) {
+                foreach (GameObject p in players) {
 
-                    tacticsMove = player[0].GetComponent<TacticsMove>();
+                    tacticsMove = players[0].GetComponent<TacticsMove>();
                 }
                 
 
@@ -428,6 +445,9 @@ public class TacticsMove : MonoBehaviourPun
     {
         turn = true;
         TurnManagerPun2.EndOfTurn = false;
+
+
+        print(PlayerStatus.LocalPlayerInstance.GetComponent<PlayerStatus>().turnCount);
     }
 
     
@@ -435,41 +455,73 @@ public class TacticsMove : MonoBehaviourPun
     public void OnClick_EndTurn()
     {
        
-        //Have click access MAIN tactsMove script with the function in it.
-        //Have func in onclick script that calls actual func in tacticsMove.
+        
 
     }
 
+    
 
+   
+        
+   
 
     public void EndTurn()
     {
 
-        print(endingTurn);
+
+
+       
+
 
         if (enemyTurn)
         {
             enemyTurn = false;
 
             TurnManagerPun2.EndOfTurn = true;
-            base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
+
+
+            //Get photonview of player and pass that into target actors
+
+
+            RaiseEventOptions raiseEventOptions = new RaiseEventOptions
+            {
+                TargetActors = new int[] { GameObject.Find("Player").GetComponent<PhotonView>().ViewID }
+            };
+
+            
+
+            object[] datas = new object[] { TurnManagerPun2.EndOfTurn };
+
+            PhotonNetwork.RaiseEvent(12, datas, RaiseEventOptions.Default,SendOptions.SendReliable);
+
+            
+            //base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
 
         }
         else
         {
+            
+
             turn = false;
+            TurnManagerPun2.turnCount++;
+
+            
+            PlayerStatus.LocalPlayerInstance.GetComponent<PlayerStatus>().turnCount++;
             if (!enemyTurn && endingTurn)
             {
                 
                 endingTurn = false;
                 NPCMove.EnemyTurn();
 
+              
+
+
                 //base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
                 //GameObject.Find("EndTurn").GetComponent<EndTurnButton>().enabled = true;
 
-                
+
             }
-            
+
 
         }
 

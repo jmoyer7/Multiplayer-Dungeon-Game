@@ -11,7 +11,7 @@ public class TurnManagerPun2 : TacticsMove
     public static bool EndOfTurn = false;
     public static bool EndOfEnemyTurn = false;
 
-    int turnCount = 0;
+    public static int turnCount = 0;
 
     public void OnGameBegins()
     {

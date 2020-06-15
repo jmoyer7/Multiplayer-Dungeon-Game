@@ -31,6 +31,9 @@ public class QuickInstantiate : MonoBehaviourPun
     [SerializeField]
     private GameObject playerUIPrefab;
 
+    [SerializeField]
+    public GameObject _player;
+
     private void Start()
     {
         Vector2 offset = Random.insideUnitCircle * 2f;
@@ -39,11 +42,23 @@ public class QuickInstantiate : MonoBehaviourPun
         Vector3 enemyPos = GameObject.Find("EnemySpawn").transform.position;
 
 
+        if (PlayerStatus.LocalPlayerInstance == null)
+        {
+            PhotonNetwork.Instantiate(this._player.name, player2Pos, Quaternion.identity);
+            playerUIPrefab = Instantiate(playerUI);
+            playerUIPrefab.transform.SetParent(PlayerStatus.LocalPlayerInstance.transform);
+            enemy = PhotonNetwork.InstantiateSceneObject(this.enemyPrefab.name, enemyPos, Quaternion.identity);
+
+        }
+        else
+        {
+            Debug.LogFormat("Ignoring scene load for {0}", SceneManagerHelper.ActiveSceneName);
+        }
         if (PhotonNetwork.IsMasterClient)
         {
             /*
             player1 = PhotonNetwork.Instantiate(this._prefab.name, position1, Quaternion.identity);
-            enemy = PhotonNetwork.InstantiateSceneObject(this.enemyPrefab.name, enemyPos, Quaternion.identity);
+            
             playerUIPrefab = Instantiate(playerUI);
             playerUIPrefab.transform.SetParent(player1.transform);
 
