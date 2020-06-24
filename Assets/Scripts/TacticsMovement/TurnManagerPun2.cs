@@ -17,13 +17,24 @@ public class TurnManagerPun2 : TacticsMove
 
     private const byte SEND_TURN_EVENT = 0;
 
+    
+
+   
+
     public void OnGameBegins()
     {
+
+        
+
+
         if (PhotonNetwork.IsMasterClient)
-        {
-            BeginTurn();
-            
-        }
+            {
+                
+                BeginTurn();
+                
+
+            }
+       
     }
 
 
@@ -47,29 +58,34 @@ public class TurnManagerPun2 : TacticsMove
     //Put turnCount variable in Tacticsmove instead
     public static void SendTurnEvent()
     {
-        turnCount++;
-        if (turnCount == 3)
-        {
-            turnCount = 0;
-        }
+        
 
         
-        print(turnCount);
+        print("turnCount: " + turnCount);
         TurnManagerPun2.EndOfTurn = true;
 
         RaiseEventOptions raiseEventOptions = new RaiseEventOptions
         {
             TargetActors = new int[] { PlayerNumbering.SortedPlayers[turnCount].ActorNumber }
 
-            
+
+           
             //GameObject.Find("Player").GetComponent<PhotonView>().ViewID
         };
 
-        
+        print(PlayerNumbering.SortedPlayers[0]);
+        print(PlayerNumbering.SortedPlayers[1]);
+        print(PlayerNumbering.SortedPlayers[2]);
+
+        print("Sending to: " + PlayerNumbering.SortedPlayers[turnCount].ActorNumber);
+       
+
 
         //TurnManagerPun2.EndOfTurn = true;
 
-        object[] datas = new object[] { TurnManagerPun2.EndOfTurn };
+        object[] datas = new object[] { TurnManagerPun2.EndOfTurn, turnCount };
+
+       
 
         PhotonNetwork.RaiseEvent(SEND_TURN_EVENT, datas, raiseEventOptions, SendOptions.SendReliable);
 
@@ -77,7 +93,20 @@ public class TurnManagerPun2 : TacticsMove
     }
 
 
-    
+
+    [PunRPC]
+    void SetAll(int tempTurnCount)
+    {
+        print(tempTurnCount);
+        turnCount = tempTurnCount;
+    }
+
+    public void SyncTurnCount()
+    {
+        print("got here at least");
+        photonView.RPC("SetAll", RpcTarget.All, TurnManagerPun2.turnCount);
+    }
+
 
     public void OnEnable()
     {
@@ -89,10 +118,10 @@ public class TurnManagerPun2 : TacticsMove
 
         if (obj.Code == SEND_TURN_EVENT)
         {
+
             
-            print("Here");
             TurnManagerPun2.EndOfTurn = true;
-            print("YES");
+           
             BeginTurn();
 
             

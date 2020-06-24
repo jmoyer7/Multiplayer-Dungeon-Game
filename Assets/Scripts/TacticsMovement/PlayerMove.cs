@@ -43,6 +43,8 @@ public class PlayerMove : TacticsMove
             Move();
         }
 	}
+
+    //public void ()
     
 
     void CheckMouse()

@@ -13,6 +13,8 @@ public class TacticsMove : MonoBehaviourPunCallbacks
 
     private TacticsMove tacticsMove;
 
+    private TurnManagerPun2 turnManagerPun2;
+
     public static bool endingTurn = false;
 
     public static bool turn = false;
@@ -52,25 +54,29 @@ public class TacticsMove : MonoBehaviourPunCallbacks
             viewIDs[i] = players[i].GetComponent<PhotonView>().ViewID;
         }
 
-        print(players[0]);
-        print(viewIDs);
+        
     }
 
     private void Update()
     {
+        
+       
+
         if (endingTurn)
         {
+            
             if (!enemyTurn)
             {
-                print("print");
+                
+               //Gets here
                 TurnManagerPun2.EndOfTurn = true;
 
                 
 
-                foreach (GameObject p in players) {
-
-                    tacticsMove = players[0].GetComponent<TacticsMove>();
-                }
+                
+                //Issue may be here
+                    tacticsMove = this.GetComponent<TacticsMove>();
+                
                 
 
                 tacticsMove.EndTurn();
@@ -451,56 +457,76 @@ public class TacticsMove : MonoBehaviourPunCallbacks
         //print(PlayerStatus.LocalPlayerInstance.GetComponent<PlayerStatus>().turnCount);
     }
 
-    
+
+
 
     
 
 
-    
 
-    
+
     public void EndTurn()
     {
 
 
-
+        
        
 
 
         if (enemyTurn)
         {
+            
+
             enemyTurn = false;
 
 
             TurnManagerPun2.SendTurnEvent();
 
-            //use playernumbering script to get actor number and pass through below options.
+
+           
 
 
-          
 
-          
 
-            
+
+
             //base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
 
         }
         else
         {
-            
+
+
+            print("End of Turn");
+
+            turnManagerPun2 = this.GetComponent<TurnManagerPun2>();
 
             turn = false;
-            
+
+
+            TurnManagerPun2.turnCount++;
+
+            if (TurnManagerPun2.turnCount == 3)
+            {
+                TurnManagerPun2.turnCount = 0;
+            }
+
+            print("Turn Count: " + TurnManagerPun2.turnCount);
+
+
+            turnManagerPun2.SyncTurnCount();
+
+
+            PlayerStatus.LocalPlayerInstance.GetComponent<PlayerStatus>().turnCount++;
 
             
-            PlayerStatus.LocalPlayerInstance.GetComponent<PlayerStatus>().turnCount++;
             if (!enemyTurn && endingTurn)
             {
                 
                 endingTurn = false;
                 NPCMove.EnemyTurn();
 
-              
+               
 
 
                 //base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
