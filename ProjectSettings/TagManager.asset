@@ -9,6 +9,7 @@ TagManager:
   - NPC
   - Player2
   - spawn
+  - enemy
   layers:
   - Default
   - TransparentFX
