@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 882037796567887789}
   - component: {fileID: 8670330326309387672}
   - component: {fileID: 2062873073549511020}
-  - component: {fileID: 4656351822122549803}
   - component: {fileID: -9039587952404653099}
   m_Layer: 0
   m_Name: Player
@@ -202,23 +201,6 @@ MonoBehaviour:
   moveSpeed: 2
   jumpVelocity: 4.5
   actualTargetTile: {fileID: 0}
---- !u!114 &4656351822122549803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6318172833782097962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd08475b23aa548b7b9d28397d430b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 10
-  height: 10
-  centerOffset: {x: 0, y: 0, z: 0}
-  followOnStart: 1
-  smoothSpeed: 0
 --- !u!114 &-9039587952404653099
 MonoBehaviour:
   m_ObjectHideFlags: 0

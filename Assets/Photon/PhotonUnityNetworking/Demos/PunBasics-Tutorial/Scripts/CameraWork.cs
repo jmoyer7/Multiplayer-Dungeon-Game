@@ -48,6 +48,7 @@ namespace Photon.Pun.Demo.PunBasics
 		
 		// Cache for camera offset
 		Vector3 cameraOffset = Vector3.zero;
+
 		
 		
         #endregion
@@ -116,10 +117,12 @@ namespace Photon.Pun.Demo.PunBasics
 		{
 			cameraOffset.z = -distance;
 			cameraOffset.y = height;
-			
-		    cameraTransform.position = Vector3.Lerp(cameraTransform.position, this.transform.position +this.transform.TransformVector(cameraOffset), smoothSpeed*Time.deltaTime);
 
-		    cameraTransform.LookAt(this.transform.position + centerOffset);
+			cameraTransform.position = this.transform.position + this.transform.TransformVector(cameraOffset);
+
+			//cameraTransform.position = Vector3.Lerp(cameraTransform.position, this.transform.position +this.transform.TransformVector(cameraOffset), smoothSpeed*Time.deltaTime);
+
+			cameraTransform.LookAt(this.transform.position + centerOffset);
 		    
 	    }
 

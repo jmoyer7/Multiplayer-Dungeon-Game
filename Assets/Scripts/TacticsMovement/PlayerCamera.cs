@@ -5,26 +5,50 @@ using Photon.Pun;
 
 public class PlayerCamera : MonoBehaviourPun
 {
-    Vector3 target;
+    GameObject target;
 
-    GameObject myCam;
+    private int targetInt;
 
-   
+    Transform myCam;
+
+    public float distance;
+
+    Transform cameraTransform;
+
+
+
+    private GameObject player;
+
+    private float y;
+    private float z;
+    private float x;
+
+    public Vector3 camPos;
+
 
 
     private void Start()
     {
-        myCam = GameObject.Find("Camera");
-       
 
-        if (!base.photonView.IsMine)
+
+
+        cameraTransform = Camera.main.transform;
+
+
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject player in players)
         {
-            (myCam.GetComponent<Camera>()).enabled = false;
+            
+            if (PhotonView.Get(player).IsMine)
+            {
+                
+                target = player;
+                break;
+            }
         }
-        else
-        {
-            target = GameObject.Find("CameraObject").transform.position;
-        }
+
+        
+        
 
         
       
@@ -33,6 +57,11 @@ public class PlayerCamera : MonoBehaviourPun
 
     void Update()
     {
-        transform.position = target;
+        Vector3 pos = target.transform.position;
+        pos.z += distance;
+        pos.y -= distance;
+        transform.position = pos;
+        cameraTransform.LookAt(target.transform);
+
     }
 }
