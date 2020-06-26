@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
 
 public class UIButton : MonoBehaviour
 {
@@ -25,10 +26,11 @@ public class UIButton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        print("ATTACK");
-        //get parent of button
-        //remove health
+        this.transform.GetComponentInParent<NPCStatus>().health--;
+        this.transform.parent.gameObject.GetComponent<PhotonView>().RPC("SetHealth", RpcTarget.All, this.transform.GetComponentInParent<NPCStatus>().health);
     }
+
+    
 
     private void OnMouseEnter()
     {

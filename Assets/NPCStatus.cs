@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class NPCStatus : MonoBehaviour
@@ -10,6 +11,13 @@ public class NPCStatus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+    }
+
+    [PunRPC]
+    void SetHealth(int enemyHealth)
+    {
+        health = enemyHealth;
 
     }
 

@@ -23,7 +23,7 @@ public class PlayerStatus : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 player2Pos = GameObject.Find("Player2_Spawn").transform.position;
+        //Vector3 player2Pos = GameObject.Find("Player2_Spawn").transform.position;
 
 
        if(playerUI != null)

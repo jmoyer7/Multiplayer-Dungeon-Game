@@ -73,11 +73,9 @@ public class TurnManagerPun2 : TacticsMove
             //GameObject.Find("Player").GetComponent<PhotonView>().ViewID
         };
 
-        print(PlayerNumbering.SortedPlayers[0]);
-        print(PlayerNumbering.SortedPlayers[1]);
-        print(PlayerNumbering.SortedPlayers[2]);
+      
 
-        print("Sending to: " + PlayerNumbering.SortedPlayers[turnCount].ActorNumber);
+        
        
 
 
@@ -97,13 +95,13 @@ public class TurnManagerPun2 : TacticsMove
     [PunRPC]
     void SetAll(int tempTurnCount)
     {
-        print(tempTurnCount);
+       
         turnCount = tempTurnCount;
     }
 
     public void SyncTurnCount()
     {
-        print("got here at least");
+        
         photonView.RPC("SetAll", RpcTarget.All, TurnManagerPun2.turnCount);
     }
 
