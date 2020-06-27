@@ -44,9 +44,13 @@ public class TacticsMove : MonoBehaviourPunCallbacks
 
     public Tile actualTargetTile;
 
+    
+
 
     public void Start()
     {
+        
+
         players = GameObject.FindGameObjectsWithTag("Player");
 
         for(int i = 0; i < players.Length; i++)
@@ -60,7 +64,8 @@ public class TacticsMove : MonoBehaviourPunCallbacks
     private void Update()
     {
         
-       
+        
+
 
         if (endingTurn)
         {
@@ -86,6 +91,8 @@ public class TacticsMove : MonoBehaviourPunCallbacks
             }
         }
     }
+
+    
     protected void Init()
     {
         tiles = GameObject.FindGameObjectsWithTag("Tile");

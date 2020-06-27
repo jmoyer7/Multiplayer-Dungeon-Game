@@ -25,6 +25,13 @@ public class PlayerStatus : MonoBehaviourPun
     {
         //Vector3 player2Pos = GameObject.Find("Player2_Spawn").transform.position;
 
+        if (base.photonView.IsMine)
+        {
+            //this.GetComponent<PhotonTransformView>().enabled = true;
+            this.GetComponent<PlayerMove>().enabled = true;
+            
+        }
+
 
        if(playerUI != null)
         {

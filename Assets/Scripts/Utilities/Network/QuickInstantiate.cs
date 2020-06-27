@@ -6,8 +6,8 @@ using UnityEngine;
 public class QuickInstantiate : MonoBehaviourPun
 {
 
-    
 
+    
     public static GameObject player1;
     public static GameObject player2;
     public static GameObject enemy;
@@ -63,13 +63,14 @@ public class QuickInstantiate : MonoBehaviourPun
             {
                 spawnPos = GameObject.Find("PlayerSpawn3").transform.position;
             }
-           
 
-            PhotonNetwork.Instantiate(this._player.name, spawnPos, Quaternion.identity);
+
+            GameObject myPlayer = PhotonNetwork.Instantiate(this._player.name, spawnPos, Quaternion.identity);
             playerUIPrefab = Instantiate(playerUI);
             playerUIPrefab.transform.SetParent(PlayerStatus.LocalPlayerInstance.transform);
             enemy = PhotonNetwork.InstantiateSceneObject(this.enemyPrefab.name, enemyPos, Quaternion.identity);
 
+           
         }
         else
         {

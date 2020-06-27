@@ -18,7 +18,7 @@ public class PlayerMove : TacticsMove
     }
 	
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
 	{
         
         //COuld be problematic
