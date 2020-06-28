@@ -18,6 +18,9 @@ public class PlayerStatus : MonoBehaviourPun
 
     public int turnCount = 0;
 
+    private GameObject inventory;
+
+
     
 
     // Start is called before the first frame update
@@ -47,7 +50,7 @@ public class PlayerStatus : MonoBehaviourPun
 
 
 
-
+        inventory = this.transform.GetChild(0).transform.GetChild(2).gameObject;
 
         currentHealth = maxHealth;
         healthBar = GameObject.Find("Health Bar");
@@ -74,6 +77,9 @@ public class PlayerStatus : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            inventory.GetComponent<UIelementsMovement>().movingInv = true;
+        }
     }
 }
