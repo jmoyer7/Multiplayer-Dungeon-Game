@@ -14,7 +14,11 @@ public class UIelementsMovement : MonoBehaviour
 
     public bool movingInv = false;
 
+    
+
     private Vector3 startingPos;
+
+    private Vector3 closedPos;
 
    
 
@@ -26,19 +30,28 @@ public class UIelementsMovement : MonoBehaviour
 
     void Update()
         {
-            if (movingInv)
-            {
-               openInventory();
-            }
+           
         }
-    
 
     public void openInventory()
     {
-        startingPos = GetComponent<RectTransform>().anchoredPosition;
+        Vector2 pos = transform.position;
+        
+            pos.y += 100f;
+            transform.position = pos;
+            
+        
+    }
 
-        startingPos.y = speed * Time.deltaTime;
 
-        GetComponent<RectTransform>().anchoredPosition = startingPos;
+    
+
+    public void closeInventory()
+    {
+        Vector2 pos = transform.position;
+
+        pos.y -= 100f;
+        transform.position = pos;
+        //GetComponent<RectTransform>().anchoredPosition = GameObject.Find("Position").transform.position;
     }
 }

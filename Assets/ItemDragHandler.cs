@@ -27,6 +27,9 @@ public class ItemDragHandler : MonoBehaviour,IPointerDownHandler,IBeginDragHandl
     public void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = false;
+        transform.SetParent(GameObject.Find("Inventory").transform);
+        transform.SetAsLastSibling();
+
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -38,5 +41,6 @@ public class ItemDragHandler : MonoBehaviour,IPointerDownHandler,IBeginDragHandl
     public void OnDrag(PointerEventData eventData)
     {
         rectTransform.anchoredPosition += eventData.delta/canvas.scaleFactor;
+        
     }
 }

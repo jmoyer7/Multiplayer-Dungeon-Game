@@ -204,6 +204,7 @@ MonoBehaviour:
   playerUI: {fileID: 3264678421233409571, guid: be6a47432213d427d9ef1afa89801866,
     type: 3}
   turnCount: 0
+  invOpen: 0
 --- !u!114 &4542293634597205539
 MonoBehaviour:
   m_ObjectHideFlags: 0

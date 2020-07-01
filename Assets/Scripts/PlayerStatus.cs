@@ -20,8 +20,10 @@ public class PlayerStatus : MonoBehaviourPun
 
     private GameObject inventory;
 
+    public bool invOpen = false;
 
-    
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,11 +34,11 @@ public class PlayerStatus : MonoBehaviourPun
         {
             //this.GetComponent<PhotonTransformView>().enabled = true;
             this.GetComponent<PlayerMove>().enabled = true;
-            
+
         }
 
 
-       if(playerUI != null)
+        if (playerUI != null)
         {
             //playerUIPrefab = Instantiate(playerUI);
             //playerUIPrefab.transform.SetParent(this.transform);
@@ -59,9 +61,9 @@ public class PlayerStatus : MonoBehaviourPun
 
         healthBar.GetComponent<HealthBar>().SetMaxHealth(maxHealth);
 
-        
-        
-        
+
+
+
 
     }
 
@@ -79,7 +81,22 @@ public class PlayerStatus : MonoBehaviourPun
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            inventory.GetComponent<UIelementsMovement>().movingInv = true;
+
+            if (!invOpen)
+            {
+                print("Yes");
+                inventory.GetComponent<UIelementsMovement>().openInventory();
+                invOpen = true;
+            }
+            else
+            {
+               
+                inventory.GetComponent<UIelementsMovement>().closeInventory();
+                invOpen = false;
+            }
         }
+
+
     }
 }
+
