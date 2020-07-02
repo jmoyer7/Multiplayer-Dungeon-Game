@@ -10,6 +10,7 @@ TagManager:
   - Player2
   - spawn
   - enemy
+  - chest
   layers:
   - Default
   - TransparentFX

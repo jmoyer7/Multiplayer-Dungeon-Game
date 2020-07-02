@@ -51,9 +51,10 @@ public class PlayerStatus : MonoBehaviourPun
 
 
 
-
-        inventory = this.transform.GetChild(0).transform.GetChild(2).gameObject;
-
+        if (base.photonView.IsMine)
+        {
+            inventory = this.transform.GetChild(0).transform.GetChild(3).gameObject;
+        }
         currentHealth = maxHealth;
         healthBar = GameObject.Find("Health Bar");
 
@@ -84,9 +85,11 @@ public class PlayerStatus : MonoBehaviourPun
 
             if (!invOpen)
             {
-                print("Yes");
-                inventory.GetComponent<UIelementsMovement>().openInventory();
-                invOpen = true;
+                if (photonView.IsMine)
+                {
+                    inventory.GetComponent<UIelementsMovement>().openInventory();
+                    invOpen = true;
+                }
             }
             else
             {
