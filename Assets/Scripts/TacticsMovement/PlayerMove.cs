@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.EventSystems;
 
 public class PlayerMove : TacticsMove 
 {
@@ -56,8 +57,9 @@ public class PlayerMove : TacticsMove
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.tag == "Tile")
+                if (hit.collider.tag == "Tile" && !EventSystem.current.IsPointerOverGameObject())
                 {
+                    
                     Tile t = hit.collider.GetComponent<Tile>();
 
                     if (t.selectable)

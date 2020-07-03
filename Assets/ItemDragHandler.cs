@@ -5,8 +5,11 @@ using UnityEngine.EventSystems;
 
 public class ItemDragHandler : MonoBehaviour,IPointerDownHandler,IBeginDragHandler,IEndDragHandler,IDragHandler
 {
+    public Item item;
+
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    private Vector3 lastPosition;
 
     [SerializeField] private Canvas canvas;
 
@@ -26,6 +29,7 @@ public class ItemDragHandler : MonoBehaviour,IPointerDownHandler,IBeginDragHandl
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        lastPosition = transform.position;
         canvasGroup.blocksRaycasts = false;
         transform.SetParent(GameObject.Find("Inventory").transform);
         transform.SetAsLastSibling();
@@ -34,8 +38,12 @@ public class ItemDragHandler : MonoBehaviour,IPointerDownHandler,IBeginDragHandl
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        print("END DRAG");
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            transform.position = lastPosition;
+        }
         canvasGroup.blocksRaycasts = true;
+
     }
 
     public void OnDrag(PointerEventData eventData)

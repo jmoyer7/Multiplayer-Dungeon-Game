@@ -11,6 +11,7 @@ TagManager:
   - spawn
   - enemy
   - chest
+  - UI
   layers:
   - Default
   - TransparentFX

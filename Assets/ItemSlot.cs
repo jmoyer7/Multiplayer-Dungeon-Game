@@ -8,14 +8,14 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 {
     public void OnDrop(PointerEventData eventData)
     {
-        print("Dropped");
+        
         if (eventData.pointerDrag != null)
         {
             float yCoord;
             float xCoord;
             yCoord = this.transform.position.y;
 
-            //Temporary Fix
+            //Temporary Fix(Sets offset of item sprite in slot)
             if (PhotonNetwork.IsMasterClient)
             {
                 xCoord = this.transform.position.x + 50f;
