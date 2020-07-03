@@ -5,7 +5,8 @@ using UnityEngine.EventSystems;
 
 public class ItemDragHandler : MonoBehaviour,IPointerDownHandler,IBeginDragHandler,IEndDragHandler,IDragHandler
 {
-    public Item item;
+    public Equipment equipment;
+
 
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;

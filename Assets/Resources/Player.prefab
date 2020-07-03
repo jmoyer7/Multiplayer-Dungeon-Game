@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2062873073549511020}
   - component: {fileID: -9039587952404653099}
   - component: {fileID: 4542293634597205539}
+  - component: {fileID: 7063543265439236341}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -220,3 +221,21 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+--- !u!114 &7063543265439236341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6318172833782097962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf96e50a67644136b01eb724f2c5142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
+  weaponSlot: {fileID: 0}
+  secondarySlot: {fileID: 0}
+  armorSlot: {fileID: 0}
+  attack: 0
+  defense: 0

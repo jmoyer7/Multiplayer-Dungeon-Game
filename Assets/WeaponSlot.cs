@@ -6,7 +6,12 @@ using UnityEngine.EventSystems;
 
 public class WeaponSlot : MonoBehaviour, IDropHandler
 {
-    
+    public GameObject player;
+
+    public void start()
+    {
+        
+    }
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -20,17 +25,20 @@ public class WeaponSlot : MonoBehaviour, IDropHandler
             //Temporary Fix(Sets offset of item sprite in slot)
             if (PhotonNetwork.IsMasterClient)
             {
-                xCoord = this.transform.position.x + 50f;
+                xCoord = this.transform.position.x + 20f;
             }
             else
             {
-                xCoord = this.transform.position.x + 60f;
+                xCoord = this.transform.position.x + 30f;
             }
             Vector3 newCoords = new Vector3(xCoord, yCoord, 0);
             eventData.pointerDrag.transform.position = newCoords;
             eventData.pointerDrag.transform.SetParent(this.transform);
 
-            //eventData.pointerDrag.GetComponent<ItemDragHandler>().item.attackPower
+            player = transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject;
+            player.GetComponent<PlayerStats>().updateEquipment(transform.GetChild(0).GetComponent<ItemDragHandler>().equipment);
+
+            
         }
     }
 }

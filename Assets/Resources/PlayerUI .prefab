@@ -2757,7 +2757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b71aa342773ad41e394d3ec2b0ab9d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: b35cb9db504004d589b0fae568ed327d, type: 2}
+  equipment: {fileID: 11400000, guid: b35cb9db504004d589b0fae568ed327d, type: 2}
   canvas: {fileID: 2769018774345475087}
 --- !u!225 &5402771332406952259
 CanvasGroup:
