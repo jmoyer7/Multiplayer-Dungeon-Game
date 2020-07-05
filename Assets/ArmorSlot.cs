@@ -4,18 +4,18 @@ using Photon.Pun;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class WeaponSlot : MonoBehaviour, IDropHandler
+public class ArmorSlot : MonoBehaviour
 {
     public GameObject player;
 
     public void start()
     {
-        
+
     }
 
     public void OnDrop(PointerEventData eventData)
     {
-       
+
         if (eventData.pointerDrag != null)
         {
             float yCoord;
@@ -25,7 +25,7 @@ public class WeaponSlot : MonoBehaviour, IDropHandler
             //Temporary Fix(Sets offset of item sprite in slot)
             if (PhotonNetwork.IsMasterClient)
             {
-                xCoord = this.transform.position.x + 0f;
+                xCoord = this.transform.position.x + -10f;
             }
             else
             {
@@ -38,7 +38,7 @@ public class WeaponSlot : MonoBehaviour, IDropHandler
             player = transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.gameObject;
             player.GetComponent<PlayerStats>().updateEquipment(transform.GetChild(0).GetComponent<ItemDragHandler>().equipment);
 
-            
+
         }
     }
 }

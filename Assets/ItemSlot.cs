@@ -6,6 +6,9 @@ using UnityEngine.EventSystems;
 
 public class ItemSlot : MonoBehaviour, IDropHandler
 {
+    public float xOffset;
+    public float yOffset;
+
     public void OnDrop(PointerEventData eventData)
     {
         
@@ -18,11 +21,11 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             //Temporary Fix(Sets offset of item sprite in slot)
             if (PhotonNetwork.IsMasterClient)
             {
-                xCoord = this.transform.position.x + 50f;
+                xCoord = this.transform.position.x + xOffset;
             }
             else
             {
-                xCoord = this.transform.position.x + 40f;
+                xCoord = this.transform.position.x + yOffset;
             }
             Vector3 newCoords = new Vector3(xCoord, yCoord, 0);
             eventData.pointerDrag.transform.position = newCoords;

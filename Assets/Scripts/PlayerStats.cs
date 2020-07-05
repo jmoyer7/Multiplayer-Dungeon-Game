@@ -26,9 +26,17 @@ public class PlayerStats : MonoBehaviour
 
     public void updateEquipment(Equipment newEquipment)
     {
-        attack = newEquipment.damageModifier;
+        if (newEquipment.damageModifier != 0)
+        {
+            attack += newEquipment.damageModifier;
+        }
 
-        defense = newEquipment.armorModifier;
+        if(newEquipment.armorModifier != 0)
+        {
+            defense += newEquipment.armorModifier;
+        }
+
+        
 
 
     } 

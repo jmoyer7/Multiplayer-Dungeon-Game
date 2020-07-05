@@ -40,6 +40,9 @@ public class TacticsMove : MonoBehaviourPunCallbacks
     bool fallingDown = false;
     bool jumpingUp = false;
     bool movingEdge = false;
+
+    static bool myTurn = false;
+
     Vector3 jumpTarget;
 
     public Tile actualTargetTile;
@@ -63,8 +66,11 @@ public class TacticsMove : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        
-        
+
+        if (myTurn)
+        {
+            UIButton.activePlayer = transform.gameObject;
+        }
 
 
         if (endingTurn)
@@ -458,6 +464,7 @@ public class TacticsMove : MonoBehaviourPunCallbacks
     public static void BeginTurn()
     {
         turn = true;
+        myTurn = true;
         TurnManagerPun2.EndOfTurn = false;
 
 
@@ -476,8 +483,8 @@ public class TacticsMove : MonoBehaviourPunCallbacks
     {
 
 
-        
-       
+
+        myTurn = false;
 
 
         if (enemyTurn)

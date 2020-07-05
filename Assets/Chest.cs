@@ -44,6 +44,7 @@ public class Chest : MonoBehaviour
             {
                 openChest(PlayerObj);
             }
+            
            
         }
     }
@@ -53,4 +54,6 @@ public class Chest : MonoBehaviour
         chestUI = playerUI.transform.GetChild(2).transform.gameObject;
         chestUI.SetActive(true);
     }
+
+    
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Photon.Pun;
+using UnityEngine.EventSystems;
 
 public class UIButton : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class UIButton : MonoBehaviour
     public Sprite mouseOver;
     public Sprite mouseClicked;
     public TextMeshPro buttonText;
+
+    PlayerStats playerStats;
+
+    public static GameObject activePlayer;
 
     // Use this for initialization
     void Start()
@@ -26,7 +31,9 @@ public class UIButton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        this.transform.GetComponentInParent<NPCStatus>().health--;
+        
+        this.transform.GetComponentInParent<NPCStatus>().health -= activePlayer.GetComponent<PlayerStats>().attack;
+        print(this.transform.GetComponentInParent<NPCStatus>().health);
         this.transform.parent.gameObject.GetComponent<PhotonView>().RPC("SetHealth", RpcTarget.All, this.transform.GetComponentInParent<NPCStatus>().health);
     }
 
