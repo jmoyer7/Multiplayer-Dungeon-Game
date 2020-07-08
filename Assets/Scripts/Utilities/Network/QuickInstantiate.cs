@@ -14,6 +14,8 @@ public class QuickInstantiate : MonoBehaviourPun
     public static GameObject[] playersInGame;
     public static Vector3 spawnPos;
 
+    private int randomSpawn;
+
 
     [SerializeField]
     public GameObject _prefab;
@@ -37,6 +39,12 @@ public class QuickInstantiate : MonoBehaviourPun
     [SerializeField]
     public GameObject _player;
 
+    public GameObject[] playerSpawns;
+
+    
+
+
+
     private void Start()
     {
         Vector2 offset = Random.insideUnitCircle * 2f;
@@ -47,28 +55,20 @@ public class QuickInstantiate : MonoBehaviourPun
 
         if (PlayerStatus.LocalPlayerInstance == null)
         {
-            playersInGame = GameObject.FindGameObjectsWithTag("Player");
+            //Account for player count in game
 
-            print(playersInGame.Length);
+            playerSpawns = GameObject.FindGameObjectsWithTag("spawn");
 
-            if (playersInGame.Length == 0)
-            {
-                spawnPos = GameObject.Find("PlayerSpawn1").transform.position;
-            }
-            else if (playersInGame.Length == 1)
-            {
-                spawnPos = GameObject.Find("PlayerSpawn2").transform.position;
-            }
-            else if (playersInGame.Length == 2)
-            {
-                spawnPos = GameObject.Find("PlayerSpawn3").transform.position;
-            }
+            randomSpawn = Random.Range(0, playerSpawns.Length);
 
-
+            spawnPos = playerSpawns[randomSpawn].transform.position;
+           
             GameObject myPlayer = PhotonNetwork.Instantiate(this._player.name, spawnPos, Quaternion.identity);
             playerUIPrefab = Instantiate(playerUI);
             playerUIPrefab.transform.SetParent(PlayerStatus.LocalPlayerInstance.transform);
             enemy = PhotonNetwork.InstantiateSceneObject(this.enemyPrefab.name, enemyPos, Quaternion.identity);
+
+            Destroy(playerSpawns[randomSpawn]);
 
            
         }
