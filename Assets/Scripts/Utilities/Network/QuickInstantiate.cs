@@ -1,13 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using ExitGames.Client.Photon;
 using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 
 public class QuickInstantiate : MonoBehaviourPun
 {
 
+    private const byte DESTROY_SPAWN_EVENT = 1;
 
-    
+
     public static GameObject player1;
     public static GameObject player2;
     public static GameObject enemy;
@@ -39,7 +43,7 @@ public class QuickInstantiate : MonoBehaviourPun
     [SerializeField]
     public GameObject _player;
 
-    public GameObject[] playerSpawns;
+    public static GameObject[] playerSpawns;
 
     
 
@@ -47,7 +51,7 @@ public class QuickInstantiate : MonoBehaviourPun
 
     private void Start()
     {
-        Vector2 offset = Random.insideUnitCircle * 2f;
+        Vector2 offset = UnityEngine.Random.insideUnitCircle * 2f;
         Vector3 position1 = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         
         Vector3 enemyPos = GameObject.Find("EnemySpawn").transform.position;
@@ -59,7 +63,7 @@ public class QuickInstantiate : MonoBehaviourPun
 
             playerSpawns = GameObject.FindGameObjectsWithTag("spawn");
 
-            randomSpawn = Random.Range(0, playerSpawns.Length);
+            randomSpawn = UnityEngine.Random.Range(0, playerSpawns.Length);
 
             spawnPos = playerSpawns[randomSpawn].transform.position;
            
@@ -68,34 +72,40 @@ public class QuickInstantiate : MonoBehaviourPun
             playerUIPrefab.transform.SetParent(PlayerStatus.LocalPlayerInstance.transform);
             enemy = PhotonNetwork.InstantiateSceneObject(this.enemyPrefab.name, enemyPos, Quaternion.identity);
 
-            Destroy(playerSpawns[randomSpawn]);
-
-           
-        }
-        else
-        {
-            Debug.LogFormat("Ignoring scene load for {0}", SceneManagerHelper.ActiveSceneName);
-        }
-        if (PhotonNetwork.IsMasterClient)
-        {
-            /*
-            player1 = PhotonNetwork.Instantiate(this._prefab.name, position1, Quaternion.identity);
             
-            playerUIPrefab = Instantiate(playerUI);
-            playerUIPrefab.transform.SetParent(player1.transform);
 
-            */
+            object[] datas = new object[] { playerSpawns[randomSpawn] };
+            
+
+            RaiseEventOptions raiseEventOptions = new RaiseEventOptions
+            {
+                Receivers = ReceiverGroup.All
+            };
+
+            PhotonNetwork.RaiseEvent(DESTROY_SPAWN_EVENT, playerSpawns[randomSpawn], raiseEventOptions, SendOptions.SendReliable);
+
+            Destroy(playerSpawns[randomSpawn]);
         }
-        
     }
 
-    private void Awake()
+    public void OnEnable()
     {
-        
-
+        PhotonNetwork.NetworkingClient.EventReceived += NetworkingClient_EventReceived;
     }
 
+    //Not working as is
+    private void NetworkingClient_EventReceived(EventData obj)
+    {
+        if (obj.Code == DESTROY_SPAWN_EVENT)
+        {
+            
+            GameObject toDestroy = (GameObject)obj[0];
+
+            
+            Destroy(toDestroy);
+            
 
 
-
+        }
+    }
 }

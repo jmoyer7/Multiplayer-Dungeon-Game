@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class TacticsMove : MonoBehaviourPunCallbacks
 {
-    public GameObject[] players;
+    public static GameObject[] players;
     public int[] viewIDs = new int[4];
 
     private TacticsMove tacticsMove;
@@ -47,6 +47,8 @@ public class TacticsMove : MonoBehaviourPunCallbacks
 
     public Tile actualTargetTile;
 
+    public int playerCount;
+
     
 
 
@@ -61,6 +63,8 @@ public class TacticsMove : MonoBehaviourPunCallbacks
             viewIDs[i] = players[i].GetComponent<PhotonView>().ViewID;
         }
 
+        print("player count " + players.Length);
+        playerCount = players.Length;
         
     }
 
@@ -520,7 +524,9 @@ public class TacticsMove : MonoBehaviourPunCallbacks
 
             TurnManagerPun2.turnCount++;
 
-            if (TurnManagerPun2.turnCount == 3)
+            print(players.Length);
+
+            if (TurnManagerPun2.turnCount == players.Length)
             {
                 TurnManagerPun2.turnCount = 0;
             }

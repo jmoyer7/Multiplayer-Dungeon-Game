@@ -31,9 +31,18 @@ public class TrapItem : MonoBehaviour, IPointerDownHandler
 
     public void setTrap(PointerEventData eventData)
     {
-        print("SETTING TRAP HERE");
-        PhotonNetwork.Instantiate("Trap", GameObject.Find("Player(Clone)").transform.position, Quaternion.identity);
-        
+
+        RaycastHit hit;
+        Tile tile = null;
+
+        if (Physics.Raycast(GameObject.Find("Player(Clone)").transform.position, -Vector3.up, out hit, 1))
+        {
+            tile = hit.collider.GetComponent<Tile>();
+            tile.gameObject.AddComponent<TrapTrigger>();
+        }
+
+        //PhotonNetwork.Instantiate("TrapTrigger", GameObject.Find("Player(Clone)").transform.position, Quaternion.identity);
+
     }
 
 }
