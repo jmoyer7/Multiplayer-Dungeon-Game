@@ -58,9 +58,15 @@ public class TurnManagerPun2 : TacticsMove
     //Put turnCount variable in Tacticsmove instead
     public static void SendTurnEvent()
     {
+
+        turnCount++;
+        if (turnCount == players.Length)
+        {
+            turnCount = 0;
+        }
+        GameObject.Find("Player(Clone)").GetComponent<TurnManagerPun2>().SyncTurnCount();
         
 
-        
         print("turnCount: " + turnCount);
         TurnManagerPun2.EndOfTurn = true;
 
@@ -102,7 +108,7 @@ public class TurnManagerPun2 : TacticsMove
     public void SyncTurnCount()
     {
         
-        photonView.RPC("SetAll", RpcTarget.All, TurnManagerPun2.turnCount);
+        photonView.RPC("SetAll", RpcTarget.All,turnCount);
     }
 
 

@@ -522,16 +522,17 @@ public class TacticsMove : MonoBehaviourPunCallbacks
             turn = false;
 
 
-            TurnManagerPun2.turnCount++;
+            //TurnManagerPun2.turnCount++;
 
             print(players.Length);
-
-            if (TurnManagerPun2.turnCount == players.Length)
-            {
-                TurnManagerPun2.turnCount = 0;
-            }
-
             print("Turn Count: " + TurnManagerPun2.turnCount);
+
+            //if (TurnManagerPun2.turnCount == players.Length)
+            //{
+            //    TurnManagerPun2.turnCount = 0;
+           // }
+
+            
 
 
             turnManagerPun2.SyncTurnCount();
