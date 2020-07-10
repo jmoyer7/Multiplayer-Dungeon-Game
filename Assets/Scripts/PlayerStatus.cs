@@ -68,6 +68,8 @@ public class PlayerStatus : MonoBehaviourPun
 
     }
 
+    
+
     private void Awake()
     {
         //needs to go on player object

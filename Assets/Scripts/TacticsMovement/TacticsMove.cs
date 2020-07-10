@@ -524,8 +524,8 @@ public class TacticsMove : MonoBehaviourPunCallbacks
 
             //TurnManagerPun2.turnCount++;
 
-            print(players.Length);
-            print("Turn Count: " + TurnManagerPun2.turnCount);
+            //print(players.Length);
+            //print("Turn Count: " + TurnManagerPun2.turnCount);
 
             //if (TurnManagerPun2.turnCount == players.Length)
             //{
@@ -535,7 +535,7 @@ public class TacticsMove : MonoBehaviourPunCallbacks
             
 
 
-            turnManagerPun2.SyncTurnCount();
+            //turnManagerPun2.SyncTurnCount();
 
 
             PlayerStatus.LocalPlayerInstance.GetComponent<PlayerStatus>().turnCount++;

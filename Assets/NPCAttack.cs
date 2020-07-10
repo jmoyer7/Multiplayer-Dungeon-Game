@@ -54,7 +54,7 @@ public class NPCAttack : TacticsMove
              
                 playerStatus = PlayerObj.GetComponent<PlayerStatus>();
                 Attack();
-                print("Attacking Now!");
+                
                 AttackedThisTurn = true;
                 //Attacking = true;
             }
@@ -66,10 +66,7 @@ public class NPCAttack : TacticsMove
 
     public void Attack()
     {
-        playerStatus.currentHealth -= attackPower;
-
-        //Problem here. Need to ONLY change health bar of player instance that is being attacked.
-        //Instead, use playerObj to find health bar since health bar is child of player
+        playerStatus.currentHealth -= attackPower;  
         healthBar.GetComponent<HealthBar>().SetHealth(playerStatus.currentHealth);
 
     }

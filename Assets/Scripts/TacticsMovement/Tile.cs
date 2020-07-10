@@ -10,6 +10,7 @@ public class Tile : MonoBehaviour
     public bool current = false;
     public bool target = false;
     public bool selectable = false;
+    public bool trap = false;
 
     public List<Tile> adjacencyList = new List<Tile>();
 
@@ -51,6 +52,10 @@ public class Tile : MonoBehaviour
         else if (selectable)
         {
             GetComponent<Renderer>().material.color = Color.red;
+        }
+        else if (trap)
+        {
+            GetComponent<Renderer>().material.color = Color.yellow;
         }
         else
         {

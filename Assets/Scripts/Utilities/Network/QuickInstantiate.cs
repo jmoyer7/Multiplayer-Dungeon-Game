@@ -73,7 +73,7 @@ public class QuickInstantiate : MonoBehaviourPun
             enemy = PhotonNetwork.InstantiateSceneObject(this.enemyPrefab.name, enemyPos, Quaternion.identity);
 
             
-
+            /*
             object[] datas = new object[] { playerSpawns[randomSpawn] };
             
 
@@ -84,10 +84,12 @@ public class QuickInstantiate : MonoBehaviourPun
 
             PhotonNetwork.RaiseEvent(DESTROY_SPAWN_EVENT, playerSpawns[randomSpawn], raiseEventOptions, SendOptions.SendReliable);
 
+            */
             Destroy(playerSpawns[randomSpawn]);
         }
     }
 
+    /*
     public void OnEnable()
     {
         PhotonNetwork.NetworkingClient.EventReceived += NetworkingClient_EventReceived;
@@ -108,4 +110,5 @@ public class QuickInstantiate : MonoBehaviourPun
 
         }
     }
+    */
 }

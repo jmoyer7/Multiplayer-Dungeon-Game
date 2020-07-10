@@ -96,13 +96,22 @@ public class TurnManagerPun2 : TacticsMove
         
     }
 
-
+    [PunRPC]
+    void SyncTrap(GameObject tile)
+    {
+        tile.AddComponent<TrapTrigger>();
+    }
 
     [PunRPC]
     void SetAll(int tempTurnCount)
     {
        
         turnCount = tempTurnCount;
+    }
+
+    public void SetTrap(GameObject tile)
+    {
+        photonView.RPC("SyncTrap", RpcTarget.All, tile);
     }
 
     public void SyncTurnCount()
