@@ -47,9 +47,12 @@ public class TrapItem : MonoBehaviour, IPointerDownHandler
 
             //This has to be done over the network
 
+            tile.GetComponent<Tile>().SetTrap();
+
+
             //put photonview on tiles and call rpc on this tile so that passing gameobject is not nessesary
             //tile.gameObject.AddComponent<TrapTrigger>();
-            GameObject.Find("Player(Clone)").gameObject.transform.GetComponent<TurnManagerPun2>().SetTrap(tile.gameObject);
+            //GameObject.Find("Player(Clone)").gameObject.transform.GetComponent<TurnManagerPun2>().SetTrap(tile.gameObject);
 
 
             tile.trap = true;

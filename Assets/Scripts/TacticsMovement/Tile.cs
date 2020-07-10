@@ -1,8 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using ExitGames.Client.Photon;
+using Photon.Pun;
+using Photon.Pun.UtilityScripts;
+using Photon.Realtime;
 using UnityEngine;
 
-public class Tile : MonoBehaviour 
+public class Tile : TacticsMove
 {
     Renderer rend;
 
@@ -36,9 +40,22 @@ public class Tile : MonoBehaviour
 	{
 
 	}
-	
-	// Update is called once per frame
-	void Update () 
+
+  
+    public void SetTrap()
+    {
+        photonView.RPC("SyncTrap", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void SyncTrap()
+    {
+        this.gameObject.AddComponent<TrapTrigger>();
+    }
+
+
+    // Update is called once per frame
+    void Update () 
 	{
      
         if (current)
