@@ -42,16 +42,6 @@ public class Tile : TacticsMove
 	}
 
   
-    public void SetTrap()
-    {
-        photonView.RPC("SyncTrap", RpcTarget.All);
-    }
-
-    [PunRPC]
-    void SyncTrap()
-    {
-        this.gameObject.AddComponent<TrapTrigger>();
-    }
 
 
     // Update is called once per frame

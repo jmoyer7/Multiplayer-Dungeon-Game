@@ -42,20 +42,25 @@ public class TrapItem : MonoBehaviour, IPointerDownHandler
         if (Physics.Raycast(GameObject.Find("Player(Clone)").transform.position, -Vector3.up, out hit, 1))
         {
             tile = hit.collider.GetComponent<Tile>();
+            tile.trap = true;
 
+            //pass coords to rpc and set trap there
+            //move levelManager to this location and then send ray to find closest tile
+            //add component to this tile
+            float x = transform.position.x;
+            float y = transform.position.y;
+            float z = transform.position.z;
 
+            int playerID = GameObject.Find("Player(Clone)").GetPhotonView().ViewID;
 
-            //This has to be done over the network
+            float[] trapCoords = new float[2];
+            //trapCoords[0] = x;
+           // trapCoords[1] = y;
+            //trapCoords[2] = z;
 
-            tile.GetComponent<Tile>().SetTrap();
-
-
-            //put photonview on tiles and call rpc on this tile so that passing gameobject is not nessesary
+            GameObject.Find("LevelManager").GetComponent<LevelManager>().SetTrap(playerID);
             //tile.gameObject.AddComponent<TrapTrigger>();
             //GameObject.Find("Player(Clone)").gameObject.transform.GetComponent<TurnManagerPun2>().SetTrap(tile.gameObject);
-
-
-            tile.trap = true;
 
         }
 

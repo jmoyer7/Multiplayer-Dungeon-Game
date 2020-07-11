@@ -14,7 +14,8 @@ public class NPCMove : TacticsMove
 	// Use this for initialization
 	void Start () 
 	{
-        Init();
+        this.gameObject.SetActive(true);
+        //Init();
 	}
 	
 	// Update is called once per frame
