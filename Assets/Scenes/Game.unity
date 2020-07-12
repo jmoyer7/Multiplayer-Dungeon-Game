@@ -343,6 +343,9 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   playerStatus: {fileID: 0}
   trapDamage: 10
+  trapUsed: 0
+  trapSetterID: 0
+  trapSetter: {fileID: 0}
 --- !u!1 &156498584 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5483202314466060776, guid: ca1c46a5a94b44600857d5f721523c87,
@@ -365,6 +368,9 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   playerStatus: {fileID: 0}
   trapDamage: 10
+  trapUsed: 0
+  trapSetterID: 0
+  trapSetter: {fileID: 0}
 --- !u!1001 &202750317
 PrefabInstance:
   m_ObjectHideFlags: 0

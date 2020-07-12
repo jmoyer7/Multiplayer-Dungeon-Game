@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5782320266250963538}
   - component: {fileID: 3231913741715801768}
   - component: {fileID: 6149951363275347843}
+  - component: {fileID: 1166065532495054286}
   m_Layer: 0
   m_Name: Chest 1
   m_TagString: chest
@@ -111,6 +112,7 @@ MonoBehaviour:
   radius: 2
   playerUI: {fileID: 0}
   chestUI: {fileID: 0}
+  lastOpened: {fileID: 0}
 --- !u!135 &3231913741715801768
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -119,7 +121,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5782320266250963543}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 2
@@ -140,3 +142,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1166065532495054286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5782320266250963543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd0cd3babdf5a4dba9a92e60c67477d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loot:
+  - {fileID: 4319889513261556529, guid: 38f1dbf7001d94ad292ce7c36d55f297, type: 3}

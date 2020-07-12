@@ -20,6 +20,7 @@ public class ItemDragHandler : MonoBehaviour,IPointerDownHandler,IBeginDragHandl
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+       
     }
 
   
