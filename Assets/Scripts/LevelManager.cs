@@ -23,6 +23,7 @@ public class LevelManager : MonoBehaviourPun
 
             tile = hit.collider.gameObject;
             tile.AddComponent<TrapTrigger>();
+            tile.GetComponent<TrapTrigger>().trapSetterID = playerID;
         }
     }
 }
