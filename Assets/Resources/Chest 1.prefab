@@ -156,3 +156,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loot:
   - {fileID: 4319889513261556529, guid: 38f1dbf7001d94ad292ce7c36d55f297, type: 3}
+  - {fileID: 4319889513261556529, guid: b15eb6ac889cc4fe78287ba019f6f38c, type: 3}
+  - {fileID: 4319889513261556529, guid: 9f2439d44c21d45bd96ed11c07083819, type: 3}
+  - {fileID: 4319889513261556529, guid: e1b93557b579446a6aad2579ea98d11e, type: 3}
+  dropRates: 
+  item1: {fileID: 0}
+  minLoot: 0
+  itemsAdded: 0
+  lootSlots: 9

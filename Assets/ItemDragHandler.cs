@@ -7,6 +7,8 @@ public class ItemDragHandler : MonoBehaviour,IPointerDownHandler,IBeginDragHandl
 {
     public Equipment equipment;
 
+    public Item item;
+
 
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;

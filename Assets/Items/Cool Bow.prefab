@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6081962243860086080}
   - component: {fileID: 203812863091221117}
   m_Layer: 5
-  m_Name: item
+  m_Name: Cool Bow
   m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipment: {fileID: 11400000, guid: b35cb9db504004d589b0fae568ed327d, type: 2}
-  item: {fileID: 11400000, guid: b35cb9db504004d589b0fae568ed327d, type: 2}
+  item: {fileID: 11400000, guid: c7df724abdb3f4f11a33c03b581f5e6b, type: 2}
   canvas: {fileID: 2769018774345475087, guid: be6a47432213d427d9ef1afa89801866, type: 3}
 --- !u!225 &203812863091221117
 CanvasGroup:

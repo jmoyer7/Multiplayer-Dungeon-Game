@@ -77,7 +77,7 @@ public class Chest : MonoBehaviour
         playerUI = playerObj.transform.GetChild(0).gameObject;
         chestUI = playerUI.transform.GetChild(2).transform.gameObject;
 
-        this.GetComponent<Loot>().fillChest(chestUI);
+        this.GetComponent<Loot>().FillChest(chestUI);
 
         chestUI.SetActive(true);
         chestOpen = true;
