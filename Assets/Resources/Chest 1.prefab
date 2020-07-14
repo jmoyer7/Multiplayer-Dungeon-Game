@@ -155,12 +155,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loot:
-  - {fileID: 4319889513261556529, guid: 38f1dbf7001d94ad292ce7c36d55f297, type: 3}
-  - {fileID: 4319889513261556529, guid: b15eb6ac889cc4fe78287ba019f6f38c, type: 3}
-  - {fileID: 4319889513261556529, guid: 9f2439d44c21d45bd96ed11c07083819, type: 3}
-  - {fileID: 4319889513261556529, guid: e1b93557b579446a6aad2579ea98d11e, type: 3}
+  - {fileID: 11400000, guid: b35cb9db504004d589b0fae568ed327d, type: 2}
+  - {fileID: 11400000, guid: 4b923a1dd16504326b419c6792d30e66, type: 2}
+  - {fileID: 11400000, guid: 561f070628ea24ad69662bc779100e35, type: 2}
+  - {fileID: 11400000, guid: c7df724abdb3f4f11a33c03b581f5e6b, type: 2}
   dropRates: 
   item1: {fileID: 0}
+  blankItem: {fileID: 4319889513261556529, guid: 38f1dbf7001d94ad292ce7c36d55f297,
+    type: 3}
   minLoot: 0
   itemsAdded: 0
   lootSlots: 9
+  slotCounter: 0

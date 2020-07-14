@@ -35,7 +35,7 @@ public class ItemDragHandler : MonoBehaviour,IPointerDownHandler,IBeginDragHandl
     {
         lastPosition = transform.position;
         canvasGroup.blocksRaycasts = false;
-        transform.SetParent(GameObject.Find("Inventory").transform);
+        transform.SetParent(GameObject.Find("PlayerUI (Clone)").transform);
         transform.SetAsLastSibling();
 
     }
@@ -52,7 +52,8 @@ public class ItemDragHandler : MonoBehaviour,IPointerDownHandler,IBeginDragHandl
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta/canvas.scaleFactor;
+        this.transform.position = eventData.position;
+        //rectTransform.anchoredPosition += eventData.delta/canvas.scaleFactor;
         
     }
 }

@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Loot : MonoBehaviour
 {
-    public GameObject[] loot;
+    public Item[] loot;
     public int[] dropRates;
     public GameObject item1;
+
+    public GameObject blankItem;
 
     public int minLoot;
 
@@ -14,19 +16,21 @@ public class Loot : MonoBehaviour
 
     public int lootSlots = 9;
 
-   
+    public int slotCounter;
+
+
     void GetDropRates()
     {
         dropRates = new int[loot.Length];
 
-        for(int i = 0; i < loot.Length; i++)
+        for (int i = 0; i < loot.Length; i++)
         {
-            dropRates[i] = loot[i].GetComponent<ItemDragHandler>().item.dropRate;
-        }       
+            dropRates[i] = loot[i].dropRate;
+        }
     }
 
-    public GameObject GetRandomItem()
-    {       
+    public Item GetRandomItem()
+    {
         int range = 0;
 
         for (int i = 0; i < dropRates.Length; i++)
@@ -36,16 +40,14 @@ public class Loot : MonoBehaviour
 
         int cumulative = 0;
 
-        for(int i = 0; i < dropRates.Length; i++)
+        for (int i = 0; i < dropRates.Length; i++)
         {
             cumulative += dropRates[i];
-            if(rand < cumulative)
+            if (rand < cumulative)
             {
                 return loot[i];
-            }            
+            }
         }
-
-        
         return null;
     }
 
@@ -57,14 +59,41 @@ public class Loot : MonoBehaviour
         {
             AddItem(GetRandomItem(), chestUI);
         }
+
+        slotCounter = 0;
     }
 
-    void AddItem(GameObject item,GameObject chestUI)
+    void AddItem(Item item, GameObject chestUI)
     {
-        item1 = Instantiate(item, chestUI.transform.parent);
-        item1.transform.position = chestUI.transform.GetChild(0).transform.position;
-        item1.transform.SetParent(chestUI.transform.GetChild(0));
+
+
+        item1 = Instantiate(blankItem, chestUI.transform.parent);
+        item1.transform.position = chestUI.transform.GetChild(slotCounter).transform.position;
+        item1.transform.SetParent(chestUI.transform.GetChild(slotCounter));
+        item1.GetComponent<ItemDragHandler>().item = item;
+
+        if (CheckForEquipment(item1.GetComponent<ItemDragHandler>().item))
+        {
+            print("true");
+            var equip = item as Equipment;
+            item1.GetComponent<ItemDragHandler>().equipment = equip;
+        }
+
+        slotCounter++;
     }
 
-    
+    bool CheckForEquipment(Item item)
+    {
+        if (item is Equipment)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+
+
 }
