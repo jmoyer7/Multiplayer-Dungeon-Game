@@ -123,6 +123,9 @@ MonoBehaviour:
   jumpVelocity: 4.5
   actualTargetTile: {fileID: 0}
   playerCount: 0
+  IgnoreMe:
+    serializedVersion: 2
+    m_Bits: 512
   enemy: {fileID: 0}
 --- !u!114 &6318172833782097965
 MonoBehaviour:

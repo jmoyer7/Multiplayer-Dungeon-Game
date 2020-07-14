@@ -74,7 +74,7 @@ public class Loot : MonoBehaviour
 
         if (CheckForEquipment(item1.GetComponent<ItemDragHandler>().item))
         {
-            print("true");
+            
             var equip = item as Equipment;
             item1.GetComponent<ItemDragHandler>().equipment = equip;
         }

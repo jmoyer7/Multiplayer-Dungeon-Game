@@ -6,29 +6,33 @@ public class Chest : MonoBehaviour
 {
     public float radius;
 
+    public LayerMask IgnoreMe;
+
     public GameObject playerUI;
     public GameObject chestUI;
-    public Collider lastOpened;
+    public static Collider lastOpened;
 
-    private bool chestOpen = false;
+    public static bool chestOpen;
 
     
 
-    private void Start()
+    private void Awake()
     {
-        
-        
+
+        chestOpen = false;
         
     }
 
     private void Update()
     {
+        
+
         if (Input.GetMouseButtonDown(0))
         {           
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-                if (Physics.Raycast(ray, out hit))
+            
+            if (Physics.Raycast(ray, out hit,Mathf.Infinity,~IgnoreMe))
                 {
                     if (hit.transform.tag == "chest")
                     { checkDistance(); }
@@ -41,6 +45,8 @@ public class Chest : MonoBehaviour
 
         
     }
+
+    
 
     private void checkDistance()
     {
@@ -71,6 +77,8 @@ public class Chest : MonoBehaviour
     }
 
     public void openChest(Collider playerObj) {
+        print("Open Chest");
+
 
         lastOpened = playerObj;
 
@@ -85,18 +93,14 @@ public class Chest : MonoBehaviour
     }
     public void closeChest(Collider playerObj)
     {
+        print("Close Chest");
+
         playerUI = playerObj.transform.GetChild(0).gameObject;
         chestUI = playerUI.transform.GetChild(2).transform.gameObject;
         chestUI.SetActive(false);
         chestOpen = false;
     }
 
-    private void OnCollisionExit(Collision collision)
-    {
-        if (chestOpen)
-        {
-            closeChest(lastOpened);
-        }
-    }
+   
 }
 

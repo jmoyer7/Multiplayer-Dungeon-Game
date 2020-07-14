@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class PlayerMove : TacticsMove 
 {
+    public LayerMask IgnoreMe;
 
     public GameObject enemy; 
 
@@ -55,19 +56,23 @@ public class PlayerMove : TacticsMove
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (hit.collider.tag == "Tile" && !EventSystem.current.IsPointerOverGameObject())
-                {
-                    
-                    Tile t = hit.collider.GetComponent<Tile>();
+        
 
-                    if (t.selectable)
-                    {
-                        MoveToTile(t);
-                    }
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~IgnoreMe))
+        {
+            if (hit.collider.tag == "Tile" && !EventSystem.current.IsPointerOverGameObject())
+            {
+
+                Tile t = hit.collider.GetComponent<Tile>();
+
+                if (t.selectable)
+                {
+                    MoveToTile(t);
                 }
             }
         }
+        }
+        
+        
     }
 }
