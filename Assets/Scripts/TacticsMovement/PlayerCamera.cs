@@ -7,61 +7,46 @@ public class PlayerCamera : MonoBehaviourPun
 {
     GameObject target;
 
-    private int targetInt;
-
-    Transform myCam;
-
     public float distance;
 
     Transform cameraTransform;
 
-
-
     private GameObject player;
-
-    private float y;
-    private float z;
-    private float x;
 
     public Vector3 camPos;
 
 
+    public float smoothSpeed = 0.125f;
+    public Vector3 offset;
+    private Vector3 velocity = Vector3.zero;
 
     private void Start()
     {
-
-
-
         cameraTransform = Camera.main.transform;
-
 
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject player in players)
-        {
-            
+        {         
             if (PhotonView.Get(player).IsMine)
-            {
-                
+            {              
                 target = player;
                 break;
             }
-        }
-
-        
-        
-
-        
-      
+        } 
     }
 
 
-    void Update()
+    void LateUpdate()
     {
-        Vector3 pos = target.transform.position;
-        pos.z += distance;
-        pos.y -= distance;
-        transform.position = pos;
-        cameraTransform.LookAt(target.transform);
+        transform.position = Vector3.SmoothDamp(transform.position, target.transform.position + offset, ref velocity, smoothSpeed * Time.deltaTime);
+        //cameraTransform.LookAt(target.transform);
+
+        //Vector3 camPos = new Vector3(target.transform.position.x, target.transform.position.y + distance, target.transform.position.z + distance);
+
+        // cameraTransform.position = camPos;
+
+        // cameraTransform.LookAt(target.transform);
+
 
     }
 }
