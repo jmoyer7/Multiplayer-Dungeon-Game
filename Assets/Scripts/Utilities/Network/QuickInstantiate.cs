@@ -72,7 +72,6 @@ public class QuickInstantiate : MonoBehaviourPun
             playerUIPrefab.transform.SetParent(PlayerStatus.LocalPlayerInstance.transform);
             enemy = PhotonNetwork.InstantiateSceneObject(this.enemyPrefab.name, enemyPos, Quaternion.identity);
 
-            
             /*
             object[] datas = new object[] { playerSpawns[randomSpawn] };
             

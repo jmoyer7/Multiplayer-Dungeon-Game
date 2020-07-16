@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraRotation : MonoBehaviour
+public class CameraRotation : PlayerCamera
 {
     public Transform cameraJig;
     public float rotateSpeed;
@@ -11,12 +11,16 @@ public class CameraRotation : MonoBehaviour
     public Vector3 offset;
     public float smoothSpeed = 0.125f;
 
+
+
+
+    
+
     void LateUpdate()
     {
+        
 
         //PROBLEM WITH ROTATION IS HERE. FIND ANOTHER WAY TO MOVE CAMERA TO PLAYER LOCATION.
-        //transform.position = Vector3.SmoothDamp(transform.position, cameraJig.transform.position + offset, ref velocity, smoothSpeed * Time.deltaTime);
-
 
         if (Input.GetKey(KeyCode.E))
         {
