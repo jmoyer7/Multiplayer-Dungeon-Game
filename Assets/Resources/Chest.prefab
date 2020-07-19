@@ -50,8 +50,6 @@ MonoBehaviour:
     m_Bits: 0
   playerUI: {fileID: 0}
   chestUI: {fileID: 0}
-  lastOpened: {fileID: 0}
-  chestOpen: 0
 --- !u!135 &1635883832462903871
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -179,8 +177,6 @@ MonoBehaviour:
     m_Bits: 512
   playerUI: {fileID: 0}
   chestUI: {fileID: 0}
-  lastOpened: {fileID: 0}
-  chestOpen: 0
 --- !u!114 &1166065532495054286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,9 +191,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loot:
   - {fileID: 11400000, guid: b35cb9db504004d589b0fae568ed327d, type: 2}
-  - {fileID: 11400000, guid: 4b923a1dd16504326b419c6792d30e66, type: 2}
+  - {fileID: 11400000, guid: ae09eb7a9a18c485c92e5bc6c252cc44, type: 2}
+  - {fileID: 11400000, guid: b597d0f4f52ba4caa96f38b24a87ddd8, type: 2}
+  - {fileID: 11400000, guid: 9347ce0231f014e13843dbb0fc878209, type: 2}
   - {fileID: 11400000, guid: 561f070628ea24ad69662bc779100e35, type: 2}
-  - {fileID: 11400000, guid: c7df724abdb3f4f11a33c03b581f5e6b, type: 2}
   dropRates: 
   item1: {fileID: 0}
   blankItem: {fileID: 4319889513261556529, guid: 38f1dbf7001d94ad292ce7c36d55f297,

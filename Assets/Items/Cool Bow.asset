@@ -17,5 +17,5 @@ MonoBehaviour:
   isDefaultItem: 0
   dropRate: 20
   equipSlot: 0
-  damageModifier: 5
+  damageModifier: 20
   armorModifier: 0

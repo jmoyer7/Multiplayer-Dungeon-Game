@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05c977d35469f43d9a40525b27d85c22, type: 3}
-  m_Name: Normal Sword 1
+  m_Script: {fileID: 11500000, guid: a44c6b72d65874860af6c25fd3a42a5b, type: 3}
+  m_Name: normal Sword
   m_EditorClassIdentifier: 
   name: New Item
   icon: {fileID: 0}
   isDefaultItem: 0
-  dropRate: 40
+  dropRate: 45
+  equipSlot: 0
+  damageModifier: 5
+  armorModifier: 0
