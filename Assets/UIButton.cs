@@ -31,8 +31,8 @@ public class UIButton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        
-        this.transform.GetComponentInParent<NPCStatus>().health -= activePlayer.GetComponent<PlayerStats>().attack;
+
+        this.transform.GetComponentInParent<NPCStatus>().health -= QuickInstantiate.myPlayer.GetComponent<PlayerStats>().attack;
         print(this.transform.GetComponentInParent<NPCStatus>().health);
         this.transform.parent.gameObject.GetComponent<PhotonView>().RPC("SetHealth", RpcTarget.All, this.transform.GetComponentInParent<NPCStatus>().health);
     }
