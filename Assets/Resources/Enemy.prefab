@@ -346,6 +346,7 @@ MonoBehaviour:
   jumpVelocity: 4.5
   actualTargetTile: {fileID: 0}
   playerCount: 0
+  radius: 10
 --- !u!114 &-6863689976977865265
 MonoBehaviour:
   m_ObjectHideFlags: 0
