@@ -5,7 +5,7 @@ using Photon.Pun;
 
 public class PlayerCamera : MonoBehaviourPun
 {
-    GameObject target;
+    public GameObject target;
 
     public float distance;
 
@@ -30,9 +30,13 @@ public class PlayerCamera : MonoBehaviourPun
             if (PhotonView.Get(player).IsMine)
             {              
                 target = player;
+                
+                
                 break;
             }
-        } 
+        }
+
+        
     }
 
 
