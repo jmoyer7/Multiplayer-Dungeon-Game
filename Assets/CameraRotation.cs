@@ -6,10 +6,8 @@ public class CameraRotation : PlayerCamera
 {
     public Transform cameraJig;
     public float rotateSpeed;
-    public float distance;
     private Vector3 velocity = Vector3.zero;
-    public Vector3 offset;
-    public float smoothSpeed = 0.125f;
+    
 
 
 
