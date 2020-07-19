@@ -8,7 +8,6 @@ public class NPCMove : TacticsMove
     GameObject target;
     public static bool IsMoving = false;
     public static bool endOfEnemyTurn = false;
-    public int radius;
 
     //Send RPC for IsMoving,working properly for master only right now
 
@@ -40,35 +39,11 @@ public class NPCMove : TacticsMove
         }
         else
         {
-            if (checkForPlayer())
-            {
-                IsMoving = true;
-                Move();
-            }
-            else
-            {
-                EndTurn();
-            }
+            IsMoving = true;
+            Move();
+            
         }
 	}
-
-    bool checkForPlayer()
-    {
-        bool playerInRange = false;
-
-        Collider[] collider = Physics.OverlapSphere(transform.position, radius);
-        foreach (Collider PlayerObj in collider)
-        {
-            if (PlayerObj.gameObject.tag == "Player")
-            {
-                playerInRange = true;
-                playerCount++;
-            }
-
-        }
-        return playerInRange;
-    }
-
 
     void CalculatePath()
     {
