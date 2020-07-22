@@ -10,8 +10,11 @@ public class EndTurnButton : TacticsMove
 
  public void OnClick()
     {
-        
-        endingTurn = true;
+           
+        if (TacticsMove.myTurn)
+        {
+            endingTurn = true;
+        }
     }
 
 

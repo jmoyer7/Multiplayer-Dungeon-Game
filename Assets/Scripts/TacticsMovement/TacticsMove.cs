@@ -41,7 +41,7 @@ public class TacticsMove : MonoBehaviourPunCallbacks
     bool jumpingUp = false;
     bool movingEdge = false;
 
-    static bool myTurn = false;
+    public static bool myTurn = false;
 
     Vector3 jumpTarget;
 
@@ -71,10 +71,7 @@ public class TacticsMove : MonoBehaviourPunCallbacks
     private void Update()
     {
 
-        if (myTurn)
-        {
-            UIButton.activePlayer = transform.gameObject;
-        }
+       
 
 
         if (endingTurn)
@@ -195,6 +192,7 @@ public class TacticsMove : MonoBehaviourPunCallbacks
 
     public void Move()
     {
+
         if (path.Count > 0)
         {
             Tile t = path.Peek();
@@ -468,7 +466,9 @@ public class TacticsMove : MonoBehaviourPunCallbacks
     public static void BeginTurn()
     {
         turn = true;
+
         myTurn = true;
+
         TurnManagerPun2.EndOfTurn = false;
 
 
@@ -488,7 +488,7 @@ public class TacticsMove : MonoBehaviourPunCallbacks
 
 
 
-        myTurn = false;
+        
 
 
         if (enemyTurn)
@@ -499,13 +499,6 @@ public class TacticsMove : MonoBehaviourPunCallbacks
 
 
             TurnManagerPun2.SendTurnEvent();
-
-
-           
-
-
-
-
 
 
             //base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
@@ -530,9 +523,9 @@ public class TacticsMove : MonoBehaviourPunCallbacks
             //if (TurnManagerPun2.turnCount == players.Length)
             //{
             //    TurnManagerPun2.turnCount = 0;
-           // }
+            // }
 
-            
+
 
 
             //turnManagerPun2.SyncTurnCount();
@@ -546,8 +539,8 @@ public class TacticsMove : MonoBehaviourPunCallbacks
                 
                 endingTurn = false;
                 NPCMove.EnemyTurn();
+                myTurn = false;
 
-               
 
 
                 //base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);

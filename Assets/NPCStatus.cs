@@ -38,13 +38,16 @@ public class NPCStatus : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit))
+            if (TacticsMove.turn)
             {
-                if (hit.transform.tag == "enemy")
-                { this.transform.GetChild(0).gameObject.SetActive(true); }
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if (hit.transform.tag == "enemy")
+                    { this.transform.GetChild(0).gameObject.SetActive(true); }
+                }
             }
         }
     }
