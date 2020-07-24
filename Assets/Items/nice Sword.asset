@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Nice Sword
   m_EditorClassIdentifier: 
   name: New Item
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 60135232705ef491d90a0052a1bbd746, type: 3}
   isDefaultItem: 0
   dropRate: 5
   equipSlot: 0

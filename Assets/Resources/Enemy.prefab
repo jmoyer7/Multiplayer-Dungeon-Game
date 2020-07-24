@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.22, y: 1.278}
+  m_AnchoredPosition: {x: 0.04, y: 1.72}
   m_SizeDelta: {x: 0.16, y: 0.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &4600132131013831967
@@ -345,8 +345,6 @@ MonoBehaviour:
   moveSpeed: 2
   jumpVelocity: 4.5
   actualTargetTile: {fileID: 0}
-  playerCount: 0
-  radius: 10
 --- !u!114 &-6863689976977865265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,7 +402,6 @@ MonoBehaviour:
   moveSpeed: 2
   jumpVelocity: 4.5
   actualTargetTile: {fileID: 0}
-  playerCount: 0
 --- !u!114 &2865236959153139767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,7 +422,6 @@ MonoBehaviour:
   moveSpeed: 2
   jumpVelocity: 4.5
   actualTargetTile: {fileID: 0}
-  playerCount: 0
   AttackedThisTurn: 0
   attackPower: 0
   thisTile: {fileID: 0}

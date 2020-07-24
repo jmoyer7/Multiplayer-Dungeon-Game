@@ -15,6 +15,7 @@ public class QuickInstantiate : MonoBehaviourPun
     public static GameObject player1;
     public static GameObject player2;
     public static GameObject enemy;
+    public static GameObject enemy1;
     public static GameObject[] playersInGame;
     public static Vector3 spawnPos;
     public static GameObject myPlayer;
@@ -56,6 +57,7 @@ public class QuickInstantiate : MonoBehaviourPun
         Vector3 position1 = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         
         Vector3 enemyPos = GameObject.Find("EnemySpawn").transform.position;
+        Vector3 enemyPos1 = GameObject.Find("EnemySpawn1").transform.position;
 
 
         if (PlayerStatus.LocalPlayerInstance == null)
@@ -71,7 +73,8 @@ public class QuickInstantiate : MonoBehaviourPun
             myPlayer = PhotonNetwork.Instantiate(this._player.name, spawnPos, Quaternion.identity);
             playerUIPrefab = Instantiate(playerUI);
             playerUIPrefab.transform.SetParent(PlayerStatus.LocalPlayerInstance.transform);
-            enemy = PhotonNetwork.InstantiateSceneObject(this.enemyPrefab.name, enemyPos, Quaternion.identity);
+            enemy = PhotonNetwork.Instantiate(this.enemyPrefab.name, enemyPos, Quaternion.identity);
+            enemy1 = PhotonNetwork.Instantiate(this.enemyPrefab.name, enemyPos1, Quaternion.identity);
 
             /*
             object[] datas = new object[] { playerSpawns[randomSpawn] };

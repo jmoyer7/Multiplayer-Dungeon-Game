@@ -14,6 +14,7 @@ public class EndTurnButton : TacticsMove
         if (TacticsMove.myTurn)
         {
             endingTurn = true;
+            UIButton.attacksThisTurn = 0;
         }
     }
 

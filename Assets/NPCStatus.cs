@@ -31,14 +31,14 @@ public class NPCStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health == 0)
+        if(health <= 0)
         {
             Destroy(gameObject);
         }
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (TacticsMove.turn)
+            if (TacticsMove.myTurn)
             {
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
