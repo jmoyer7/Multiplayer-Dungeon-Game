@@ -122,7 +122,6 @@ MonoBehaviour:
   moveSpeed: 2
   jumpVelocity: 4.5
   actualTargetTile: {fileID: 0}
-  playerCount: 0
   IgnoreMe:
     serializedVersion: 2
     m_Bits: 512
@@ -169,7 +168,6 @@ MonoBehaviour:
   moveSpeed: 2
   jumpVelocity: 4.5
   actualTargetTile: {fileID: 0}
-  playerCount: 0
 --- !u!114 &2062873073549511020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +188,6 @@ MonoBehaviour:
   moveSpeed: 2
   jumpVelocity: 4.5
   actualTargetTile: {fileID: 0}
-  playerCount: 0
 --- !u!114 &-9039587952404653099
 MonoBehaviour:
   m_ObjectHideFlags: 0

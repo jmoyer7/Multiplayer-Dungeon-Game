@@ -24,10 +24,10 @@ public class PlayerMove : TacticsMove
 	{
         
         //COuld be problematic
-        if (NPCMove.IsMoving)
-        {
-            return;
-        }
+        //if (NPCMove.IsMoving)
+        //{
+        //    return;
+        //}
 
         Debug.DrawRay(transform.position, transform.forward);
         if (!turn || !base.photonView.IsMine || enemyTurn)

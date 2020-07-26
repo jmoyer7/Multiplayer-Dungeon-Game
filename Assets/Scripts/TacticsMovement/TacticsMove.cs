@@ -47,7 +47,7 @@ public class TacticsMove : MonoBehaviourPunCallbacks
 
     public Tile actualTargetTile;
 
-    public int playerCount;
+    public static int playerCount;
 
     
 
@@ -63,7 +63,7 @@ public class TacticsMove : MonoBehaviourPunCallbacks
             viewIDs[i] = players[i].GetComponent<PhotonView>().ViewID;
         }
 
-        print("player count " + players.Length);
+       
         playerCount = players.Length;
         
     }
@@ -493,8 +493,7 @@ public class TacticsMove : MonoBehaviourPunCallbacks
 
         if (enemyTurn)
         {
-            
-
+            NPCMove.playerInRange = false;
             enemyTurn = false;
 
 

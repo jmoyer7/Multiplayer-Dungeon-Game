@@ -13,6 +13,8 @@ public class UIButton : MonoBehaviour
     public Sprite mouseClicked;
     public TextMeshPro buttonText;
 
+    public static int attacksThisTurn = 0;
+
     PlayerStats playerStats;
 
     public static GameObject activePlayer;
@@ -31,10 +33,14 @@ public class UIButton : MonoBehaviour
 
     private void OnMouseDown()
     {
+        attacksThisTurn++;
 
-        this.transform.GetComponentInParent<NPCStatus>().health -= QuickInstantiate.myPlayer.GetComponent<PlayerStats>().attack;
-        print(this.transform.GetComponentInParent<NPCStatus>().health);
-        this.transform.parent.gameObject.GetComponent<PhotonView>().RPC("SetHealth", RpcTarget.All, this.transform.GetComponentInParent<NPCStatus>().health);
+        if (attacksThisTurn < 3)
+        {
+            this.transform.GetComponentInParent<NPCStatus>().health -= QuickInstantiate.myPlayer.GetComponent<PlayerStats>().attack;
+            print(this.transform.GetComponentInParent<NPCStatus>().health);
+            this.transform.parent.gameObject.GetComponent<PhotonView>().RPC("SetHealth", RpcTarget.All, this.transform.GetComponentInParent<NPCStatus>().health);
+        }
     }
 
     
