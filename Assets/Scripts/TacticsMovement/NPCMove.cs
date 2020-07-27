@@ -9,7 +9,8 @@ public class NPCMove : TacticsMove
     public static bool IsMoving = false;
     public static bool endOfEnemyTurn = false;
     public int radius;
-    public bool playerInRange = false;
+    public bool playerNearMe = false;   //True if player is in range for THIS enemy
+    public static bool playerInRange = false;  //True if player is in range for any enemy
 
 
     //Send RPC for IsMoving,working properly for master only right now
@@ -42,14 +43,17 @@ public class NPCMove : TacticsMove
         }
         else
         {
-            if (playerInRange)
+            if (playerNearMe)
             {
                 IsMoving = true;
                 Move();
             }
             else
             {
-                EndTurn();
+                if (!playerInRange)
+                {
+                    EndTurn();
+                }
             }
         }
 	}

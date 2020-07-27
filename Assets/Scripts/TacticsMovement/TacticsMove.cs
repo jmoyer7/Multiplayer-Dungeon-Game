@@ -493,7 +493,7 @@ public class TacticsMove : MonoBehaviourPunCallbacks
 
         if (enemyTurn)
         {
-            NPCMove.playerInRange = false;
+            //NPCMove.playerInRange = false;
             enemyTurn = false;
 
 

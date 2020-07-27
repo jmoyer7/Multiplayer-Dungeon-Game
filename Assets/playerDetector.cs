@@ -8,9 +8,15 @@ public class playerDetector : MonoBehaviour
     {
         print("Player Here");
 
-        GetComponentInParent<NPCMove>().playerInRange = true;
-        
+        GetComponentInParent<NPCMove>().playerNearMe = true;
+
+        NPCMove.playerInRange = true;
         
     }
-   
+
+    private void OnCollisionStay(Collision collision)
+    {
+        NPCMove.playerInRange = true;
+    }
+
 }

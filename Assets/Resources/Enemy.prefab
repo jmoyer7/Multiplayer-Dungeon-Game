@@ -209,17 +209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5eea3ce3be8542c7b81d2786a219020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewIDs: 00000000000000000000000000000000
-  currentTile: {fileID: 0}
-  moving: 0
-  move: 5
-  jumpHeight: 2
-  moveSpeed: 2
-  jumpVelocity: 4.5
-  actualTargetTile: {fileID: 0}
-  playerCount: 0
-  radius: 0
-  playerInRange: 0
 --- !u!1 &2357990655432963565
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +403,6 @@ MonoBehaviour:
   moveSpeed: 2
   jumpVelocity: 4.5
   actualTargetTile: {fileID: 0}
-  playerCount: 0
   radius: 10
   playerInRange: 0
 --- !u!114 &-6863689976977865265
@@ -474,7 +462,6 @@ MonoBehaviour:
   moveSpeed: 2
   jumpVelocity: 4.5
   actualTargetTile: {fileID: 0}
-  playerCount: 0
 --- !u!114 &2865236959153139767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,7 +482,6 @@ MonoBehaviour:
   moveSpeed: 2
   jumpVelocity: 4.5
   actualTargetTile: {fileID: 0}
-  playerCount: 0
   AttackedThisTurn: 0
   attackPower: 0
   thisTile: {fileID: 0}
