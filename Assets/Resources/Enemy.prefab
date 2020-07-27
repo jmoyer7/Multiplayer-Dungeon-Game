@@ -398,13 +398,13 @@ MonoBehaviour:
   viewIDs: 00000000000000000000000000000000
   currentTile: {fileID: 0}
   moving: 0
-  move: 5
+  move: 3
   jumpHeight: 2
   moveSpeed: 2
   jumpVelocity: 4.5
   actualTargetTile: {fileID: 0}
   radius: 10
-  playerInRange: 0
+  playerNearMe: 0
 --- !u!114 &-6863689976977865265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,7 +457,7 @@ MonoBehaviour:
   viewIDs: 00000000000000000000000000000000
   currentTile: {fileID: 0}
   moving: 0
-  move: 5
+  move: 3
   jumpHeight: 2
   moveSpeed: 2
   jumpVelocity: 4.5
@@ -477,7 +477,7 @@ MonoBehaviour:
   viewIDs: 00000000000000000000000000000000
   currentTile: {fileID: 0}
   moving: 0
-  move: 5
+  move: 3
   jumpHeight: 2
   moveSpeed: 2
   jumpVelocity: 4.5
