@@ -9,8 +9,10 @@ public class NPCMove : TacticsMove
     public static bool IsMoving = false;
     public static bool endOfEnemyTurn = false;
     public int radius;
-    public bool playerNearMe = false;   //True if player is in range for THIS enemy
+    public int playersNearMe = 0;   //True if player is in range for THIS enemy
     public static int playersInRange = 0;  //Tracks number of players in range of enemies
+
+    public static ArrayList turnOrder;
    
 
 
@@ -20,6 +22,8 @@ public class NPCMove : TacticsMove
 	void Start () 
 	{
         Init();
+
+        turnOrder = new ArrayList();
 	}
 	
 	// Update is called once per frame
@@ -44,7 +48,7 @@ public class NPCMove : TacticsMove
         }
         else
         {
-            if (playerNearMe)
+            if (playersNearMe > 0)
             {
                 IsMoving = true;
                 Move();
@@ -107,6 +111,9 @@ public class NPCMove : TacticsMove
 
     public static void EnemyTurn()
     {
+
+        
+        
         enemyTurn = true;
     }
 }

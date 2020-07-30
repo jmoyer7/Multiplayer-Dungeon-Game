@@ -404,7 +404,7 @@ MonoBehaviour:
   jumpVelocity: 4.5
   actualTargetTile: {fileID: 0}
   radius: 10
-  playerNearMe: 0
+  playersNearMe: 0
 --- !u!114 &-6863689976977865265
 MonoBehaviour:
   m_ObjectHideFlags: 0

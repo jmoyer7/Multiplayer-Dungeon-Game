@@ -7,10 +7,11 @@ public class playerDetector : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        GetComponentInParent<NPCMove>().playerNearMe = true;
+        GetComponentInParent<NPCMove>().playersNearMe++;
 
         NPCMove.playersInRange++;
-        
+
+        NPCMove.turnOrder.Add(gameObject.transform.parent.gameObject);
     }
 
     private void OnCollisionStay(Collision collision)
@@ -20,9 +21,11 @@ public class playerDetector : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        GetComponentInParent<NPCMove>().playerNearMe = false;
+        GetComponentInParent<NPCMove>().playersNearMe--;
 
         NPCMove.playersInRange--;
+
+        NPCMove.turnOrder.Remove(gameObject.transform.parent.gameObject);
     }
 
 }

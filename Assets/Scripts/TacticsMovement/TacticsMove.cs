@@ -469,10 +469,7 @@ public class TacticsMove : MonoBehaviourPunCallbacks
 
         myTurn = true;
 
-        TurnManagerPun2.EndOfTurn = false;
-
-
-        //print(PlayerStatus.LocalPlayerInstance.GetComponent<PlayerStatus>().turnCount);
+        TurnManagerPun2.EndOfTurn = false;     
     }
 
 

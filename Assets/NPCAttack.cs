@@ -44,19 +44,14 @@ public class NPCAttack : TacticsMove
         {
             if (PlayerObj.gameObject.tag == "Player")
             {
+                    playerUI = PlayerObj.transform.GetChild(0).gameObject;
+                    healthBar = playerUI.transform.GetChild(0).gameObject;
 
-                //get child of player
+                    playerStatus = PlayerObj.GetComponent<PlayerStatus>();
+                    Attack();
 
-
-
-                playerUI = PlayerObj.transform.GetChild(0).gameObject;
-                healthBar = playerUI.transform.GetChild(0).gameObject;
-             
-                playerStatus = PlayerObj.GetComponent<PlayerStatus>();
-                Attack();
-                
-                AttackedThisTurn = true;
-                //Attacking = true;
+                    AttackedThisTurn = true;
+                    //Attacking = true;              
             }
             
         }
