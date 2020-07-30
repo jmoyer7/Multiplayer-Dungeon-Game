@@ -12,6 +12,8 @@ public class playerDetector : MonoBehaviour
         NPCMove.playersInRange++;
 
         NPCMove.turnOrder.Add(gameObject.transform.parent.gameObject);
+        NPCMove.turnOrderSize++;
+        print("Adding to Turn Order");
     }
 
     private void OnCollisionStay(Collision collision)
@@ -26,6 +28,7 @@ public class playerDetector : MonoBehaviour
         NPCMove.playersInRange--;
 
         NPCMove.turnOrder.Remove(gameObject.transform.parent.gameObject);
+        NPCMove.turnOrderSize--;
     }
 
 }

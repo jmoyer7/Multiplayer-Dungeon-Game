@@ -12,7 +12,10 @@ public class NPCMove : TacticsMove
     public int playersNearMe = 0;   //True if player is in range for THIS enemy
     public static int playersInRange = 0;  //Tracks number of players in range of enemies
 
-    public static ArrayList turnOrder;
+    public bool thisTurn = false; //whether or not it is THIS enemy's turn
+
+    public static List<GameObject> turnOrder;
+    public static int turnOrderSize = 0;
    
 
 
@@ -23,10 +26,10 @@ public class NPCMove : TacticsMove
 	{
         Init();
 
-        turnOrder = new ArrayList();
+        turnOrder = new List<GameObject>();
 	}
-	
-	// Update is called once per frame
+
+    //CLEAN UP THIS MESS WITH SWITCH STATEMENTS AND VARS
 	void Update () 
 	{
         Debug.DrawRay(transform.position, transform.forward);
@@ -48,18 +51,29 @@ public class NPCMove : TacticsMove
         }
         else
         {
-            if (playersNearMe > 0)
+          if(turnOrderSize > 1 && thisTurn)
             {
                 IsMoving = true;
                 Move();
             }
-            else
+          else if(turnOrderSize > 1)
             {
-                if (playersInRange == 0)
-                {
-                    EndTurn();
-                }
+                //Not this turn yet so return
+                return;
             }
+          else if(playersNearMe > 0)
+            {
+                IsMoving = true;
+                Move();
+            }
+                else
+                {
+                    if (playersInRange == 0)
+                    {
+                        EndTurn();
+                    }
+                }
+            
         }
 	}
 
@@ -111,9 +125,18 @@ public class NPCMove : TacticsMove
 
     public static void EnemyTurn()
     {
-
-        
-        
         enemyTurn = true;
+        if (turnOrderSize > 1)
+        {
+            //Might need more work here for when it's the last enemy's turn so that turn passes to player
+
+
+                turnOrder[0].GetComponent<NPCMove>().thisTurn = true;
+                turnOrder.RemoveAt(0);
+                turnOrderSize--;
+
+        }
+        
+        
     }
 }

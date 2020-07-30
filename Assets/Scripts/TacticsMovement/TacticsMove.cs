@@ -482,23 +482,21 @@ public class TacticsMove : MonoBehaviourPunCallbacks
 
     public void EndTurn()
     {
-
-
-
-        
-
-
         if (enemyTurn)
         {
-            //NPCMove.playerInRange = false;
-            enemyTurn = false;
+            //If more than one enemy is in range and seperate turns are required
+            if (NPCMove.turnOrderSize > 1)
+            {
+                //get component in enemy whose turn it is
+                GetComponent<NPCMove>().thisTurn = false;
 
-
-            TurnManagerPun2.SendTurnEvent();
-
-
-            //base.photonView.RPC("SendTurn", RpcTarget.Others, TurnManagerPun2.EndOfTurn);
-
+                NPCMove.EnemyTurn();
+            }
+            else
+            {
+                enemyTurn = false;
+                TurnManagerPun2.SendTurnEvent();
+            }
         }
         else
         {
