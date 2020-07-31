@@ -405,6 +405,8 @@ MonoBehaviour:
   actualTargetTile: {fileID: 0}
   radius: 10
   playersNearMe: 0
+  thisTurn: 0
+  turnOver: 0
 --- !u!114 &-6863689976977865265
 MonoBehaviour:
   m_ObjectHideFlags: 0

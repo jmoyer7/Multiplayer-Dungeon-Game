@@ -484,16 +484,24 @@ public class TacticsMove : MonoBehaviourPunCallbacks
     {
         if (enemyTurn)
         {
+            NPCMove.turnsTaken++;
+
             //If more than one enemy is in range and seperate turns are required
-            if (NPCMove.turnOrderSize > 1)
+            if (NPCMove.turnOrderSize > 1 && NPCMove.turnsTaken != NPCMove.turnOrderSize)
             {
                 //get component in enemy whose turn it is
                 GetComponent<NPCMove>().thisTurn = false;
+                
+
+                print("back to enemy turn");
+                print(NPCMove.turnsTaken);
 
                 NPCMove.EnemyTurn();
+
             }
             else
             {
+                print("Ending enemy turn");
                 enemyTurn = false;
                 TurnManagerPun2.SendTurnEvent();
             }
@@ -502,7 +510,7 @@ public class TacticsMove : MonoBehaviourPunCallbacks
         {
 
 
-            print("End of Turn");
+ 
 
             turnManagerPun2 = this.GetComponent<TurnManagerPun2>();
 

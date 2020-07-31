@@ -15,7 +15,12 @@ public class NPCMove : TacticsMove
     public bool thisTurn = false; //whether or not it is THIS enemy's turn
 
     public static List<GameObject> turnOrder;
+
     public static int turnOrderSize = 0;
+
+    public static int turnsTaken = 0;
+
+    public bool turnOver = false;
    
 
 
@@ -51,24 +56,29 @@ public class NPCMove : TacticsMove
         }
         else
         {
-          if(turnOrderSize > 1 && thisTurn)
+          if(turnOrderSize > 1)
             {
-                IsMoving = true;
-                Move();
+                if (thisTurn)
+                {
+
+                    IsMoving = true;
+                    Move();
+
+                }
+                
             }
-          else if(turnOrderSize > 1)
+          
+          else if(playersNearMe > 0 && turnOrderSize < 2)
             {
-                //Not this turn yet so return
-                return;
-            }
-          else if(playersNearMe > 0)
-            {
+
+                print(turnOrderSize);
+                print(thisTurn);
                 IsMoving = true;
                 Move();
             }
                 else
                 {
-                    if (playersInRange == 0)
+                    if (playersInRange == 0 )
                     {
                         EndTurn();
                     }
@@ -126,15 +136,23 @@ public class NPCMove : TacticsMove
     public static void EnemyTurn()
     {
         enemyTurn = true;
-        if (turnOrderSize > 1)
+        if (turnOrderSize > 1 && turnsTaken != turnOrderSize)
         {
+            print("turn order > 1");
             //Might need more work here for when it's the last enemy's turn so that turn passes to player
-
-
                 turnOrder[0].GetComponent<NPCMove>().thisTurn = true;
                 turnOrder.RemoveAt(0);
-                turnOrderSize--;
 
+                foreach(GameObject g in turnOrder)
+            {
+                print(g.transform.position);
+            }
+
+                
+        }
+        else if(turnsTaken == turnOrderSize)
+        {
+            turnsTaken = 0;
         }
         
         

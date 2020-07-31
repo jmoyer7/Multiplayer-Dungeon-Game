@@ -27,6 +27,8 @@ public class playerDetector : MonoBehaviour
 
         NPCMove.playersInRange--;
 
+        print("EXITING COLLISION");
+
         NPCMove.turnOrder.Remove(gameObject.transform.parent.gameObject);
         NPCMove.turnOrderSize--;
     }
