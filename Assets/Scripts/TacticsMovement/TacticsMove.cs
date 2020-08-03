@@ -484,7 +484,13 @@ public class TacticsMove : MonoBehaviourPunCallbacks
     {
         if (enemyTurn)
         {
-            NPCMove.turnsTaken++;
+            if(NPCMove.turnOrderSize > 1)
+            {
+                NPCMove.turnsTaken++;
+            }
+
+            //print(NPCMove.turnsTaken);
+            //print(NPCMove.turnOrderSize);
 
             //If more than one enemy is in range and seperate turns are required
             if (NPCMove.turnOrderSize > 1 && NPCMove.turnsTaken != NPCMove.turnOrderSize)
@@ -494,17 +500,20 @@ public class TacticsMove : MonoBehaviourPunCallbacks
                 
 
                 print("back to enemy turn");
-                print(NPCMove.turnsTaken);
+                
 
                 NPCMove.EnemyTurn();
 
             }
             else
             {
+                GetComponent<NPCMove>().thisTurn = false;
                 print("Ending enemy turn");
                 enemyTurn = false;
+                NPCMove.turnsTaken = 0;
                 TurnManagerPun2.SendTurnEvent();
             }
+            
         }
         else
         {

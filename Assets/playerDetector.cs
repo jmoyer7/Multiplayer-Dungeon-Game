@@ -6,31 +6,33 @@ public class playerDetector : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.tag == "Player")
+        {
+            GetComponentInParent<NPCMove>().playersNearMe++;
 
-        GetComponentInParent<NPCMove>().playersNearMe++;
+            NPCMove.playersInRange++;
 
-        NPCMove.playersInRange++;
-
-        NPCMove.turnOrder.Add(gameObject.transform.parent.gameObject);
-        NPCMove.turnOrderSize++;
-        print("Adding to Turn Order");
+            NPCMove.turnOrder.Add(gameObject.transform.parent.gameObject);
+            NPCMove.turnOrderSize++;
+            print("Adding to Turn Order");
+        }
     }
 
-    private void OnCollisionStay(Collision collision)
-    {
-        //NPCMove.playerInRange = true;
-    }
+  
 
     private void OnCollisionExit(Collision collision)
     {
-        GetComponentInParent<NPCMove>().playersNearMe--;
+        if (collision.gameObject.tag == "Player")
+        {
+            GetComponentInParent<NPCMove>().playersNearMe--;
 
-        NPCMove.playersInRange--;
+            NPCMove.playersInRange--;
 
-        print("EXITING COLLISION");
+            print("EXITING COLLISION");
 
-        NPCMove.turnOrder.Remove(gameObject.transform.parent.gameObject);
-        NPCMove.turnOrderSize--;
+            NPCMove.turnOrder.Remove(gameObject.transform.parent.gameObject);
+            NPCMove.turnOrderSize--;
+        }
     }
 
 }

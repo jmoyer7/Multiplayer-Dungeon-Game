@@ -21,6 +21,7 @@ public class NPCMove : TacticsMove
     public static int turnsTaken = 0;
 
     public bool turnOver = false;
+    public static GameObject temp;
    
 
 
@@ -32,7 +33,8 @@ public class NPCMove : TacticsMove
         Init();
 
         turnOrder = new List<GameObject>();
-	}
+        
+    }
 
     //CLEAN UP THIS MESS WITH SWITCH STATEMENTS AND VARS
 	void Update () 
@@ -60,7 +62,6 @@ public class NPCMove : TacticsMove
             {
                 if (thisTurn)
                 {
-
                     IsMoving = true;
                     Move();
 
@@ -71,8 +72,7 @@ public class NPCMove : TacticsMove
           else if(playersNearMe > 0 && turnOrderSize < 2)
             {
 
-                print(turnOrderSize);
-                print(thisTurn);
+                
                 IsMoving = true;
                 Move();
             }
@@ -141,19 +141,20 @@ public class NPCMove : TacticsMove
             print("turn order > 1");
             //Might need more work here for when it's the last enemy's turn so that turn passes to player
                 turnOrder[0].GetComponent<NPCMove>().thisTurn = true;
-                turnOrder.RemoveAt(0);
+            print(turnOrder[0].transform.position + "Is taking turn!");
+            //for some reason not moving on its turn and other enemy is moving. Fix.
+                temp = turnOrder[0];
+                turnOrder[0] = turnOrder[1];
+                turnOrder[turnOrderSize - 1] = temp;
+                
 
-                foreach(GameObject g in turnOrder)
-            {
-                print(g.transform.position);
-            }
+                
+
+            
 
                 
         }
-        else if(turnsTaken == turnOrderSize)
-        {
-            turnsTaken = 0;
-        }
+        
         
         
     }

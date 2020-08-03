@@ -67,7 +67,7 @@ public class TurnManagerPun2 : TacticsMove
         GameObject.Find("Player(Clone)").GetComponent<TurnManagerPun2>().SyncTurnCount();
         
 
-        print("turnCount: " + turnCount);
+    
         TurnManagerPun2.EndOfTurn = true;
 
         RaiseEventOptions raiseEventOptions = new RaiseEventOptions
