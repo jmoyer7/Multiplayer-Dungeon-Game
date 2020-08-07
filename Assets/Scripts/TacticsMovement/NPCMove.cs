@@ -48,7 +48,7 @@ public class NPCMove : TacticsMove
             return;
         }
 
-        if (!moving)
+        if (!moving && enemyTurn && playersNearMe > 0)
         {
             IsMoving = false;
             FindNearestTarget();
@@ -108,6 +108,7 @@ public class NPCMove : TacticsMove
     void CalculatePath()
     {
         Tile targetTile = GetTargetTile(target);
+        
         FindPath(targetTile);
     }
 

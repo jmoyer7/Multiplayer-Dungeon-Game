@@ -100,6 +100,8 @@ public class Tile : MonoBehaviour
             {
                 RaycastHit hit;
 
+               
+
                 if (!Physics.Raycast(tile.transform.position, Vector3.up, out hit, 1) || (tile == target))
                 {
                     adjacencyList.Add(tile);
@@ -110,5 +112,34 @@ public class Tile : MonoBehaviour
 
             }
         }
+    }
+
+    public Tile getAdjacentTile(Tile tile)
+    {
+
+        Tile newTile;
+        Vector3 halfExtents = new Vector3(0.25f, (1) / 2.0f, 0.25f);
+        Collider[] colliders = Physics.OverlapBox(transform.position + Vector3.right, halfExtents);
+
+        foreach (Collider item in colliders)
+        {
+            Tile t = item.GetComponent<Tile>();
+            if (t != null && t.walkable)
+            {
+                RaycastHit hit;
+
+
+
+                if (!Physics.Raycast(t.transform.position, Vector3.up, out hit, 1) || (tile == target))
+                {
+                    print(t);
+                    //Use this tile as EndTile instead.
+                }
+            }
+
+        }
+        return tile;
+
+       
     }
 }

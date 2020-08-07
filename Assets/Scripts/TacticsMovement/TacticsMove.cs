@@ -375,6 +375,8 @@ public class TacticsMove : MonoBehaviourPunCallbacks
 
     protected Tile FindEndTile(Tile t)
     {
+
+        print("FInding end tile");
         Stack<Tile> tempPath = new Stack<Tile>();
 
         Tile next = t.parent;
@@ -386,6 +388,12 @@ public class TacticsMove : MonoBehaviourPunCallbacks
 
         if (tempPath.Count <= move)
         {
+            if (checkForEnemy(t.parent))
+            {
+                print("enemy on end tile");
+
+            }
+            print(t.parent);
             return t.parent;
         }
 
@@ -395,8 +403,38 @@ public class TacticsMove : MonoBehaviourPunCallbacks
             endTile = tempPath.Pop();
         }
 
+        if (checkForEnemy(endTile))
+        {
+            print("enemy on end tile");
+
+            //endTile = endTile.getAdjacentTile(endTile);
+        }
+
+        //endTile.GetComponent<Tile>().trap = true;
+
+
+        print(endTile);
         return endTile;
     }
+
+    public bool checkForEnemy(Tile tile)
+    {
+        RaycastHit hit;
+
+        print(tile);
+        if (Physics.Raycast(tile.transform.position, Vector3.up, out hit, 2))
+        {
+            //insread of raycast check collision with enemy.
+
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    
 
     protected void FindPath(Tile target)
     {
@@ -428,7 +466,6 @@ public class TacticsMove : MonoBehaviourPunCallbacks
 
             foreach (Tile tile in t.adjacencyList)
             {
-                
 
                 if (closedList.Contains(tile))
                 {
