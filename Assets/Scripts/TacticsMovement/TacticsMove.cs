@@ -388,6 +388,7 @@ public class TacticsMove : MonoBehaviourPunCallbacks
 
         if (tempPath.Count <= move)
         {
+            print("Checking end tile HERE");
             if (checkForEnemy(t.parent))
             {
                 print("enemy on end tile");
@@ -403,6 +404,7 @@ public class TacticsMove : MonoBehaviourPunCallbacks
             endTile = tempPath.Pop();
         }
 
+        print("Checking end tile here");
         if (checkForEnemy(endTile))
         {
             print("enemy on end tile");
@@ -424,7 +426,11 @@ public class TacticsMove : MonoBehaviourPunCallbacks
         print(tile);
         if (Physics.Raycast(tile.transform.position, Vector3.up, out hit, 2))
         {
-            //insread of raycast check collision with enemy.
+            
+            //This works when the case is actually true. But the issue is that
+            //the enemies are using the same path and walking through each other
+            //Probably can be fixed by checking each tile in adjacency list for an enemy
+            //And removing it if so BEFORE deciding on path.
 
             return true;
         }
