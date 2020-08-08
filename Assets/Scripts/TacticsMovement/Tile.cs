@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class Tile : MonoBehaviour 
@@ -24,7 +25,18 @@ public class Tile : MonoBehaviour
     public float g = 0;
     public float h = 0;
 
-    
+    public bool occupied = false;
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        occupied = true;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        occupied = false;
+    }
 
     private void Awake()
     {
@@ -112,6 +124,22 @@ public class Tile : MonoBehaviour
 
             }
         }
+    }
+
+    public bool CheckForEnemy(Tile t, PhotonView photonView)
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(t.transform.position, Vector3.up, out hit, 1) && hit.collider.tag == "enemy" && hit.collider.gameObject.GetPhotonView() != photonView)
+        {
+           
+            return true;
+        } 
+        else
+        {
+            return false;
+        }
+
     }
 
     public Tile getAdjacentTile(Tile tile)

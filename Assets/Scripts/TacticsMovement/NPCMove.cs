@@ -63,7 +63,7 @@ public class NPCMove : TacticsMove
                 if (thisTurn)
                 {
                     IsMoving = true;
-                    Move();
+                    Move(this.gameObject.GetPhotonView());
 
                 }
                 
@@ -74,7 +74,7 @@ public class NPCMove : TacticsMove
 
                 
                 IsMoving = true;
-                Move();
+                Move(this.gameObject.GetPhotonView());
             }
                 else
                 {

@@ -185,17 +185,28 @@ public class TacticsMove : MonoBehaviourPunCallbacks
         Tile next = tile;
         while (next != null)
         {
+           
             path.Push(next);
             next = next.parent;
+            
         }
     }
 
-    public void Move()
+    public void Move(PhotonView photonView)
     {
 
         if (path.Count > 0)
         {
             Tile t = path.Peek();
+
+            
+            //This is working properly. Just need to make sure don't move to obstructed tile
+            if (t.CheckForEnemy(t, photonView))
+            {
+                print(t + "Is Obstructed");
+                print("OH NO");
+            }
+
             Vector3 target = t.transform.position;
 
             //Calculate the unit's position on top of the target tile
@@ -394,7 +405,7 @@ public class TacticsMove : MonoBehaviourPunCallbacks
                 print("enemy on end tile");
 
             }
-            print(t.parent);
+            
             return t.parent;
         }
 
@@ -415,7 +426,7 @@ public class TacticsMove : MonoBehaviourPunCallbacks
         //endTile.GetComponent<Tile>().trap = true;
 
 
-        print(endTile);
+       
         return endTile;
     }
 

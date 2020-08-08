@@ -42,7 +42,7 @@ public class PlayerMove : TacticsMove
         }
         else
         {
-            Move();
+            Move(this.gameObject.GetPhotonView());
         }
 	}
 
