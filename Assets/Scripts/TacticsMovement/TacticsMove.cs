@@ -200,11 +200,12 @@ public class TacticsMove : MonoBehaviourPunCallbacks
             Tile t = path.Peek();
 
             
-            //This is working properly. Just need to make sure don't move to obstructed tile
+            //Prevents enemy from moving on top of other enemy.
+            //Works as temp. fix but still, the path chosen should not be through
+            //object to begin with. Will need proper fix.
             if (t.CheckForEnemy(t, photonView))
             {
-                print(t + "Is Obstructed");
-                print("OH NO");
+                t = path.Pop();
             }
 
             Vector3 target = t.transform.position;
