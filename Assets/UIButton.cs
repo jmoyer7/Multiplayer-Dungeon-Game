@@ -34,7 +34,7 @@ public class UIButton : MonoBehaviour
     private void OnMouseDown()
     {
         attacksThisTurn++;
-
+        print("ATTACKING");
         if (attacksThisTurn < 3)
         {
             this.transform.GetComponentInParent<NPCStatus>().health -= QuickInstantiate.myPlayer.GetComponent<PlayerStats>().attack;

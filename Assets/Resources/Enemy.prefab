@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.22, y: 1.278}
+  m_AnchoredPosition: {x: -0.02, y: 1.78}
   m_SizeDelta: {x: 0.16, y: 0.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &4600132131013831967
@@ -505,6 +505,9 @@ MonoBehaviour:
   healthBarUI: {fileID: 0}
   health: 10
   maxHealth: 50
+  IgnoreMe:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &5701074229818242379
 GameObject:
   m_ObjectHideFlags: 0

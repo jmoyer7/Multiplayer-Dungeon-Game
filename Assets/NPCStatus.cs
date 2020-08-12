@@ -12,12 +12,14 @@ public class NPCStatus : MonoBehaviour
 
     public float maxHealth = 50;
 
+    public LayerMask IgnoreMe;
+
 
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
-        healthBarUI = transform.GetChild(1).transform.gameObject.transform.GetChild(0).transform.gameObject;
+        healthBarUI = transform.GetChild(2).transform.gameObject.transform.GetChild(0).transform.gameObject;
     }
 
     [PunRPC]
@@ -36,16 +38,21 @@ public class NPCStatus : MonoBehaviour
             Destroy(gameObject);
         }
 
+
+        
         if (Input.GetMouseButtonDown(0))
         {
+           
             if (TacticsMove.myTurn)
             {
+                
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-                if (Physics.Raycast(ray, out hit))
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~IgnoreMe))
                 {
-                    if (hit.transform.tag == "enemy")
+                    
+                    if (hit.transform.gameObject.tag == "enemy" && hit.transform.gameObject == this.transform.gameObject)
                     { this.transform.GetChild(0).gameObject.SetActive(true); }
                 }
             }
